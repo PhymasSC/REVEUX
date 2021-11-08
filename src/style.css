@@ -35,7 +35,7 @@ body {
     background-color: var(--theme-color);
     color: var(--font-color);
     font-family: 'Inter', sans-serif;
-    background-image: url('img/background.png');
+    background-image: url('../img/background.png');
 }
 
 a {
