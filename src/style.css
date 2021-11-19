@@ -3,27 +3,28 @@
 }
 
 :root {
-    --theme-color-hue: 252;
-    --theme-color-saturation: 9%;
-    --theme-color-lightness: 5%;
+    --light-theme-color-hue: 252;
+    --light-theme-color-saturation: 9%;
+    --light-theme-color-lightness: 80%;
 
-    --theme-color: hsl(var(--theme-color-hue), var(--theme-color-saturation), var(--theme-color-lightness));
-    --font-color: hsl(0, 0%, 98%);
+    --theme-color: hsl(var(--light-theme-color-hue), var(--light-theme-color-saturation), var(--light-theme-color-lightness));
+    --font-color: hsl(0, 0%, 0%);
 
 }
 ::-webkit-scrollbar {
     background-color: var(--theme-color);
-    width: .8rem;
-    height: .8rem;
+    width: 1vw;
+    height: 2vh;
 }
 
 ::-webkit-scrollbar-thumb {
-    --theme-color-lightness: 100%;
+    --light-theme-color-lightness: 100%;
 
-    border: 3px solid var(--theme-color);
+    border: .25vw solid var(--theme-color);
     background-clip: padding-box;
-    border-radius: 999em;
-    background-color: hsl(0, 0%, 90%);
+    width: 1vw;
+    border-radius: 999rem;
+    background-color: hsl(0, 0%, 50%);
 }
 
 ::-webkit-scrollbar-corner {
@@ -35,7 +36,16 @@ body {
     background-color: var(--theme-color);
     color: var(--font-color);
     font-family: 'Inter', sans-serif;
-    background-image: url('../img/background.png');
+    background-image: 
+        radial-gradient(at 76% 62%, hsla(224,70%,67%,1) 0, transparent 58%),  
+        radial-gradient(at 7% 8%, hsla(228,75%,71%,1) 0, transparent 53%),  
+        radial-gradient(at 23% 84%, hsla(180,66%,74%,1) 0, transparent 40%),  
+        radial-gradient(at 33% 38%, hsla(195,95%,62%,1) 0, transparent 41%),  
+        radial-gradient(at 62% 18%, rgb(126, 247, 237) 0, transparent 41%),  
+        radial-gradient(at 5% 18%, hsla(78,74%,72%,1) 0, transparent 47%),  
+        radial-gradient(at 94% 65%, hsla(278,98%,76%,1) 0, transparent 50%),
+        url("/img/noise-effect.svg"); 
+        /* Add frosted-effect or noise-effect */
 }
 
 a {
@@ -56,7 +66,7 @@ a {
     position: absolute;
     letter-spacing: 0em;
     font-size: .5em;
-    color: #ccc;
+    color: hsl(0, 0%, 7%);
 }
 
 .header {
@@ -69,19 +79,20 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: .5em 0 .5em 1em;
+    padding: .5em 1em;
     width: 100%;
     font-size: .8em;
 }
 
-.pagination {
+.pagination, .pagination-tools {
     display: flex;
 }
 
-.pagination > li {
+.pagination > li, .pagination-tools > li {
     padding: 0 1em;
     list-style-type: none;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 .cover {
