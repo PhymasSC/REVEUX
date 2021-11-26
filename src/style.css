@@ -44,7 +44,7 @@ body {
         radial-gradient(at 62% 18%, rgb(126, 247, 237) 0, transparent 41%),  
         radial-gradient(at 5% 18%, hsla(78,74%,72%,1) 0, transparent 47%),  
         radial-gradient(at 94% 65%, hsla(278,98%,76%,1) 0, transparent 50%),
-        url("/img/noise-effect.svg"); 
+        url("../img/noise-effect.svg"); 
         /* Add frosted-effect or noise-effect */
 }
 
