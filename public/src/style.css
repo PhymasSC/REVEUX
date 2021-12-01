@@ -63,9 +63,16 @@ a {
     color: hsl(0, 0%, 7%);
 }
 
-.header {
+.fv, .flex-vertical {
     display: flex;
     flex-direction: column;
+}
+
+.fh, .flex-horizontal {
+    display: flex;
+}
+
+.header {
     height: 100vh;
     background-image:white;background-image:  
         radial-gradient(at 60% 58%, hsla(0,100%,91%,1) 0, transparent 50%),  
@@ -87,10 +94,6 @@ a {
     font-size: .8em;
 }
 
-.pagination, .pagination-tools {
-    display: flex;
-}
-
 .pagination > li, .pagination-tools > li {
     padding: 0 1em;
     list-style-type: none;
@@ -99,7 +102,6 @@ a {
 }
 
 .cover {
-    display: flex;
     justify-content: space-evenly;
     align-items: center;
     padding: 1rem;
@@ -121,8 +123,6 @@ a {
 }
 
 .cover-welcome {
-    display: flex;
-    flex-direction: column;
     justify-self: flex-start;
     align-items: flex-start;
 }
@@ -131,8 +131,6 @@ a {
     margin-bottom: .5em;
 }
 .top-pick {
-    display: flex;
-    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     width: 100%;
@@ -162,17 +160,23 @@ a {
     cursor: pointer;
 }
 
+.inactive, .inactive:hover, .inactive:focus {
+    cursor: not-allowed !important;
+    color: hsl(0, 0%, 50%) !important;
+    border-color: hsl(0, 0%, 50%) !important;
+}
+
 .btn:hover {
-    color: #555;
+    border-color: hsla(0,85%,80%,1);
+    color: hsla(0,85%,80%,1);
 }
 
 .subscription {
-    display: flex;
-    flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     height: 100vh;
     padding-top: 1em;
+    background-color: #fee4dd;
 }
 
 .cards {
@@ -183,7 +187,26 @@ a {
 }
 
 .member-card {
+    align-items: center;
+    justify-content: center;
     border: .2em solid #000;
     border-radius: .3em;
     padding: 1em;
+}
+
+.member-card h2 {
+    text-align: center;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
+
+.price::before {
+    content: "RM";
+    font-size: 75%;
+}
+
+.footer {
+    
 }

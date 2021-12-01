@@ -1,0 +1,79 @@
+.history-section {
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .history,
+  .history-img {
+    justify-content: center;
+  }
+
+  .history {
+    text-align: justify;
+    width: 40em;
+    padding-right: 2em;
+    line-height: 1.5em;
+    font-size: 120%;
+  }
+
+  .history-img {
+    padding-left: 2em;
+    margin-top: 5em;
+  }
+
+  .history-img img {
+    border-radius: 0.7em;
+  }
+
+  .sec-why-us {
+    background-color: rgba(223, 223, 223, 0.767);
+    width: 100%;
+    height: 100vh;
+  }
+
+  .why-us h1,
+  .sec-dev h1 {
+    margin: 0;
+    padding-top: 2em;
+    padding-left: 2.5em;
+    font-size: 2.5em;
+  }
+
+  .img,
+  .dev-img {
+    justify-content: space-evenly;
+  }
+
+  .img > div,
+  .dev-img > div {
+    margin-top: 10em;
+  }
+
+  .img > div > img {
+    margin-left: 8em;
+    width: 7em;
+  }
+
+  .dev-img > div > img {
+    padding: 2em;
+    background-color: rgba(255, 255, 255, 0.288);
+    border-radius: 0.7em;
+  }
+
+  .sec-dev {
+    background-color: rgb(231, 231, 142);
+    width: 100%;
+    height: 100vh;
+  }
+
+  .img > div > p {
+    align-self: center;
+    width: 15em;
+    text-align: center;
+    font-size: 1.5em;
+  }
+
+  .dev-img > div > p {
+    align-self: center;
+  }
