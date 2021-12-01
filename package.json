@@ -1,0 +1,27 @@
+{
+  "name": "Assignment",
+  "version": "1.0.0",
+  "description": "Web design assignment for subject CSF3206.",
+  "main": "index.js",
+  "scripts": {
+    "devStart": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PhymasSC/REVEUX.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PhymasSC/REVEUX/issues"
+  },
+  "homepage": "https://github.com/PhymasSC/REVEUX#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  }
+}
