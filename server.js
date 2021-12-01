@@ -12,5 +12,9 @@ app.get("/", (req, res) => {
 	res.render("index", { variableA: variableA });
 });
 
+app.get("/about-us", (req, res) => {
+	res.render("about-us");
+});
+
 app.use("/product", productRouter);
 app.listen(5000);
