@@ -8,7 +8,7 @@ app.use(express.static(path.join(__dirname, "/public")));
 app.get("/", (req, res) => {
 	let variableA = "123";
 
-	res.render("index", { variableA: variableA });
+	res.render("product_page", { variableA: variableA });
 });
 
 app.listen(5000);
