@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const productRouter = require("./routes/product.js");
 app.set("view engine", "ejs");
 
 app.use(express.static(path.join(__dirname, "/public")));
@@ -8,7 +9,8 @@ app.use(express.static(path.join(__dirname, "/public")));
 app.get("/", (req, res) => {
 	let variableA = "123";
 
-	res.render("product_page", { variableA: variableA });
+	res.render("index", { variableA: variableA });
 });
 
+app.use("/product", productRouter);
 app.listen(5000);

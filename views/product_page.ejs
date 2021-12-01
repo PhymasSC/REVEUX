@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REVEUX</title>
-    <link rel="shortcut icon" href="img/Favicon.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="/img/Favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="/src/styleProductPage.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,26 +14,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 
     <style>
-
         .container {
-            display: flex; 
+            display: flex;
             justify-content: center;
             height: 100vh;
             width: auto;
         }
 
-        .product_img, .desc {
+        .product_img,
+        .desc {
             display: flex;
             flex-direction: column;
-            align-self: center; 
+            align-self: center;
         }
 
         .product_img {
             padding-right: 5em;
-            
+
         }
 
-        .product_img img{
+        .product_img img {
             background-color: rgba(255, 255, 255, 0.288);
             border-radius: 1em;
             padding: 60px;
@@ -61,11 +62,6 @@
             font-weight: bold;
         }
 
-        .text {
-            text-indent: 1em;
-            margin-top: 0;
-        }
-
         .top_img {
             width: 100%;
             height: 100vh;
@@ -74,15 +70,15 @@
             background-repeat: no-repeat;
             background-position: 50% 50%;
         }
-
     </style>
 </head>
+
 <body>
     <header class='header'>
         <nav class='nav-bar'>
-            <a class="logo" href="#homepage">REVEUX</a>
+            <a class="logo" href="/">REVEUX</a>
             <ul class="pagination">
-                <li><a href="#homepage">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="#catalog">Catalog</a></li>
                 <li><a href="#about-us">About Us</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -94,27 +90,47 @@
         </nav>
         <div class="top_img"></div>
     </header>
-        <div class="container">
-            <div class="product_img">
-                <img src="img/skincare_cream_product.png" alt="product" width="400px" height="400px">
-                <button class="btn">ADD TO CART</button>
-                <p class="text_under_btn">Premium Member: 5% discount</p>
-                <p class="text_under_btn">Divibe Member: 10% discount</p>
-            </div>
-            <div class="desc">
-                <p class="title">PRODUCT NAME</p>
-                <p class="text">Skincare Cream Night</p>
-                <p class="title">PRICE</p>
-                <p class="text">MYR 250.00</p>
-                <p class="title">DESCRIPTION</p>
-                <p class="text">Skin Types: Oily, sensitive, dry</p>
-                <p class="text">Skin Concerns: Available to all skin concerns</p>
-                <p class="text">Formulation: Natural extract from lavender, aloe vera, and Isatis indigotica.L</p>
-                <p class="text">Skincare by Age: Above 20 year-old</p>
-                <p class="title">INGREDIENTS</p>
-                <p class="text">Product Claims: Suitable for all skin type</p>
-            </div>
+    <div class="container">
+        <div class="product_img">
+            <img src=<%- product.image%> alt="product" width="400px" height="400px">
+
+            <button class="btn">ADD TO CART</button>
+            <p class="text_under_btn">Premium Member: 5% discount</p>
+            <p class="text_under_btn">Divibe Member: 10% discount</p>
         </div>
-        <footer></footer>
+        <div class="desc">
+            <p class="title">PRODUCT NAME</p>
+            <p class="text">
+                <%= product.name%>
+            </p>
+            <p class="title">PRICE</p>
+            <p class="text">
+                <%= product.price%>
+            </p>
+            <p class="title">DESCRIPTION</p>
+            <table>
+                <tr>
+                    <td>Skin Types</td>
+                    <td>Oily, sensitive, dry</td>
+                </tr>
+                <tr>
+                    <td>Skin Concerns</td>
+                    <td>Available to all skin concerns</td>
+                </tr>
+                <tr>
+                    <td>Formulation</td>
+                    <td>Natural extract from lavender, aloe vera, and Isatis indigotica.L</td>
+                </tr>
+                <tr>
+                    <td>Skincare by Age</td>
+                    <td>Above 20 year-old</td>
+                </tr>
+            </table>
+            <p class="title">INGREDIENTS</p>
+            <p class="text">Product Claims: Suitable for all skin type</p>
+        </div>
+    </div>
+    <footer></footer>
 </body>
+
 </html>

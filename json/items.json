@@ -1,0 +1,11 @@
+[
+    {
+        "id": 1,
+        "name": "NightSerum",
+        "price": 199.99,
+        "image": "/img/Serum-bottle-02.png",
+        "description": {
+        }
+    }
+
+]
