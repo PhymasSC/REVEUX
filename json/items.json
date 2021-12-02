@@ -3,7 +3,8 @@
         "id": 1,
         "name": "NightSerum",
         "price": 199.99,
-        "image": "/img/Serum-bottle-02.png",
+        "image": "/img/serum-bottle-03.png",
+        "cover": "/img/serum-bottle-03-cover.png",
         "description": {
             "Skin Type": "Oily, sensitive, dry",
             "Skin Concern": "Available to all skin concerns",
