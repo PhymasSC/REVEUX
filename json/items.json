@@ -11,6 +11,18 @@
             "Skincare by Age": "Above 20 years-old",
             "Ingredients": "Suitable for all skin types"
         }
+    },
+    {
+        "id": 1,
+        "name": "NightSerum",
+        "price": 199.99,
+        "image": "/img/Serum-bottle-02.png",
+        "description": {
+            "Skin Type": "Oily, sensitive, dry",
+            "Skin Concern": "Available to all skin concerns",
+            "Formulation": "Natural extract from lavender, aloe vera, and Isatis indigotica.L",
+            "Skincare by Age": "Above 20 years-old",
+            "Ingredients": "Suitable for all skin types"
+        }
     }
-
 ]

@@ -15,6 +15,7 @@ img {
     --theme-color: hsl(var(--light-theme-color-hue), var(--light-theme-color-saturation), var(--light-theme-color-lightness));
     --font-color: hsl(0, 0%, 0%);
 }
+
 ::-webkit-scrollbar {
     background-color: var(--theme-color);
     width: 1vw;
@@ -35,11 +36,14 @@ img {
     background-color: transparent;
 }
 
+html {
+    font-family: 'Inter', sans-serif;
+}
+
 body {
     margin: 0;
     background-color: var(--theme-color);
     color: var(--font-color);
-    font-family: 'Inter', sans-serif;
 }
 
 a {
@@ -202,11 +206,112 @@ a {
     hyphens: auto;
 }
 
+.price {
+    font-size: 150%;
+}
 .price::before {
     content: "RM";
     font-size: 75%;
 }
 
+.price::after {
+    content: "/mo";
+    font-size: 75%;
+}
+
 .footer {
-    
+    background-color: #000;
+    color: #FAFAFA;
+    padding: 3em;
+    height: 50vh;
+}
+
+.upper-footer {
+    width: 100%;
+    justify-content: space-between;
+    border-bottom: 1px solid white;
+}
+
+.footer-logo {
+    align-items: center;
+    font-family: 'Cinzel', sans-serif;
+    font-size: 1.3rem;
+    margin-left: -.6em;
+}
+
+.footer-logo img{
+    width: 4rem;
+}
+#footerLogo {
+    filter: invert(1);
+}
+
+.social {
+    color: white;
+}
+
+.social{
+    margin-top: 1em;
+}
+
+.social img:hover {
+    filter: invert(60%);
+}
+
+.social img {
+    width: 2.5em;
+    filter: invert(80%);
+    cursor: pointer;
+}
+
+.footer-pages > div {
+    margin-right: 1em;
+}
+.footer-pages > div > div{
+    color: hsl(0, 0%, 50%)
+}
+
+.footer-pages > div > ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+.footer-pages > div > ul > li {
+    margin-bottom: .5em;
+}
+
+.newsletter {
+    max-width: 30%;
+}
+
+.newsletter > div:first-child {
+    font-size: 130%;
+    font-family: 'Cinzel', sans-serif;
+    margin-bottom: 1em;
+}
+
+.newsletter > div:not(:first-child) {
+    color:hsl(0, 0%, 80%);
+    margin-bottom: .5em;
+}
+
+.newsletter > input[type="email" i], .newsletter > input[type="submit"]  {
+    --text-color: #000000;
+
+    outline: none;
+    border: .3em solid #FAFAFA;
+    padding: 1em;
+    font-family: inherit;
+    color: var(--text-color);
+}
+
+.newsletter > input[type="email" i] {
+    width: 70%;
+    margin-right: 0;
+}
+.newsletter > input[type="submit"]{
+    --text-color: #FAFAFA;
+    background-color: #000;
+    text-transform: uppercase;
+    cursor: pointer;
 }

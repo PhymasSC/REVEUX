@@ -4,6 +4,7 @@ const path = require("path");
 const productRouter = require("./routes/product.js");
 const aboutUsRouter = require("./routes/about-us.js");
 const contactRouter = require("./routes/contact.js");
+const port = process.env.PORT || 5000;
 
 app.set("view engine", "ejs");
 
@@ -20,4 +21,4 @@ app.use("/product", productRouter);
 app.use("/about-us", aboutUsRouter);
 app.use("/contact-us", contactRouter);
 
-app.listen(5000);
+app.listen(port);
