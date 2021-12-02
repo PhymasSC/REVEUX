@@ -17,40 +17,28 @@
 
 <body>
   <header class="header">
-    <nav class="nav-bar fh">
-      <a class="logo" href="/">REVEUX</a>
-      <ul class="pagination fh">
-        <li><a href="/">Home</a></li>
-        <li><a href="#catalog">Catalog</a></li>
-        <li><a href="/about-us">About Us</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <ul class="pagination-tools fh">
-        <li>Cart</li>
-        <li>User</li>
-      </ul>
-    </nav>
-    <div class="history-section fh">
-      <div class="history fv">
-        <h1>HISTORY</h1>
-        <p>
-          REVEUX, an online beauty store founded in 2021. In the year 2020,
-          the global has been battered by covid-19 pandemic. This pandemic
-          changed the lifestyle of people all around the world. The online
-          business started becomes the trend and everyone can buy anything
-          through an online store and the things will be delivered to the
-          buyer. Therefore, we get an business idea to open an online beauty
-          store. REVEUX has no physical store, all of the deals and
-          transactions are done throught the REVEUX officail website. REVEUX
-          offers various type of cosmetic products such as skincare products,
-          haircare products, body care products, make-up products, and
-          fragrance.
-        </p>
+    <%- include("_navbar.ejs") %>
+      <div class="history-section fh">
+        <div class="history fv">
+          <h1>HISTORY</h1>
+          <p>
+            REVEUX, an online beauty store founded in 2021. In the year 2020,
+            the global has been battered by covid-19 pandemic. This pandemic
+            changed the lifestyle of people all around the world. The online
+            business started becomes the trend and everyone can buy anything
+            through an online store and the things will be delivered to the
+            buyer. Therefore, we get an business idea to open an online beauty
+            store. REVEUX has no physical store, all of the deals and
+            transactions are done throught the REVEUX officail website. REVEUX
+            offers various type of cosmetic products such as skincare products,
+            haircare products, body care products, make-up products, and
+            fragrance.
+          </p>
+        </div>
+        <div class="history-img fv">
+          <img src="img/lipstick.png" alt="img_aboutus" width="300px" height="300px" />
+        </div>
       </div>
-      <div class="history-img fv">
-        <img src="img/lipstick.png" alt="img_aboutus" width="300px" height="300px" />
-      </div>
-    </div>
   </header>
   <section class="sec-why-us">
     <div class="why-us">
