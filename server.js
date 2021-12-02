@@ -4,6 +4,7 @@ const path = require("path");
 const productRouter = require("./routes/product.js");
 const aboutUsRouter = require("./routes/about-us.js");
 const contactRouter = require("./routes/contact.js");
+const catalogRouter = require("./routes/catalog.js");
 
 app.set("view engine", "ejs");
 
@@ -19,5 +20,6 @@ app.get("/", (req, res) => {
 app.use("/product", productRouter);
 app.use("/about-us", aboutUsRouter);
 app.use("/contact-us", contactRouter);
+app.use("/catalog", catalogRouter);
 
 app.listen(5000);

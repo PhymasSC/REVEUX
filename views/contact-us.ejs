@@ -5,11 +5,92 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contact Us</title>
+    <link rel="shortcut icon" href="/img/Favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="/src/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+
+    <style>
+        header {
+            height: calc(100% + 100vh);
+        }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .section h1 {
+            font-size: 7rem;
+            margin-top: 0.1em;
+            margin-bottom: 0;
+        }
+
+        .section p {
+            font-size: 0.8rem;
+            padding-bottom: 3em;
+        }
+
+        input,
+        textarea {
+            display: flex;
+            justify-content: center;
+            width: 38em;
+            border: 1px solid rgb(0, 0, 0);
+            padding: .7em;
+            margin-bottom: 1em;
+            font-size: 1rem;
+            border-radius: .3em;
+            font-family: inherit;
+        }
+
+        input:focus,
+        textarea:focus {
+            border: 2px solid rgb(247, 112, 202);
+            box-shadow: 0 0 10px 0 rgb(252, 252, 252);
+        }
+
+        .resize {
+            resize: none;
+        }
+
+        .btn .send {
+            background-color: black;
+            color: aliceblue;
+            margin-bottom: 5em;
+        }
+
+        .btn .send:hover {
+            box-shadow: 0 0 7px 0 rgb(252, 252, 252);
+        }
+
+        .btn .send:focus {
+            border: 2px solid rgb(253, 253, 253);
+            box-shadow: 0 0 7px 0 rgb(252, 252, 252);
+        }
+    </style>
+
 </head>
 
 <body>
-    <h1>Hello</h1>
+    <header class="header">
+        <%- include("_navbar.ejs") %>
+            <div class="section">
+                <h1>Contact us</h1>
+                <p>Feel free to contact us and we will get back as soon as possible</p>
+                <form>
+                    <input type="text" name="name" id="name" placeholder="Name">
+                    <input type="email" name="email" id="email" placeholder="Email Address">
+                    <textarea name="opinion" id="opinion" cols="30" rows="10" placeholder="Tell us about your opinion"
+                        class="resize"></textarea>
+                    <input type="button" value="SEND" class="btn send">
+                </form>
+            </div>
+    </header>
 </body>
 
 </html>
