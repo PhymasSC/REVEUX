@@ -167,7 +167,7 @@ a {
 .inactive, .inactive:hover, .inactive:focus {
     cursor: not-allowed !important;
     color: hsl(0, 0%, 50%) !important;
-    border-color: hsl(0, 0%, 50%) !important;
+    border: none;
 }
 
 .btn:hover {
@@ -178,8 +178,7 @@ a {
 .subscription {
     justify-content: flex-start;
     align-items: center;
-    height: 100vh;
-    padding-top: 1em;
+    padding: 3em;
     background-color: #fee4dd;
 }
 
@@ -222,14 +221,18 @@ a {
 .footer {
     background-color: #000;
     color: #FAFAFA;
-    padding: 3em;
-    height: 50vh;
+    padding: 2em 1.5em 1em 1.5em;
 }
 
 .upper-footer {
     width: 100%;
     justify-content: space-between;
+    padding-bottom: .5em;
     border-bottom: 1px solid white;
+}
+
+.upper-footer > div:first-child {
+    width: 30%;
 }
 
 .footer-logo {
@@ -242,6 +245,7 @@ a {
 .footer-logo img{
     width: 4rem;
 }
+
 #footerLogo {
     filter: invert(1);
 }
@@ -259,7 +263,7 @@ a {
 }
 
 .social img {
-    width: 2.5em;
+    width: 2em;
     filter: invert(80%);
     cursor: pointer;
 }
@@ -314,4 +318,19 @@ a {
     background-color: #000;
     text-transform: uppercase;
     cursor: pointer;
+}
+
+.lower-footer {
+    height: 100%;
+    align-items: center;
+    margin-top: 1em;
+    justify-content: space-between;
+}
+
+.lower-footer > div > span:first-child {
+    margin-right: 1em;
+}
+
+.lower-footer > div > span:not(:last-child), .lower-footer> div:first-child > span {
+    color:hsl(0, 0%, 50%)
 }

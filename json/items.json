@@ -3,6 +3,7 @@
         "id": 1,
         "name": "NightSerum",
         "price": 199.99,
+        "priceInCents": 19999,
         "image": "/img/serum-bottle-03.png",
         "cover": "/img/serum-bottle-03-cover.png",
         "description": {
@@ -14,10 +15,12 @@
         }
     },
     {
-        "id": 1,
-        "name": "NightSerum",
+        "id": 2,
+        "name": "DaytimeSerum",
         "price": 199.99,
+        "priceInCents": 19999,
         "image": "/img/Serum-bottle-02.png",
+        "cover": "/img/skincare_cream.png",
         "description": {
             "Skin Type": "Oily, sensitive, dry",
             "Skin Concern": "Available to all skin concerns",

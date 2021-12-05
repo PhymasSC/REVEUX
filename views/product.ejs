@@ -8,6 +8,7 @@
     <title>Product Page</title>
     <link rel="shortcut icon" href="/img/Favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="/src/style.css">
+    <script src="/src/payment.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
@@ -17,7 +18,7 @@
         .top-img {
             width: 100%;
             height: 100%;
-            background-image: url(<%- product.cover %>);
+            background-image: url(<%- product?.cover %>);
             background-size: cover;
             background-position: 50% 50%;
         }
@@ -88,7 +89,7 @@
         <div class="product_img">
             <img src=<%- product.image%> alt="product" width="400px" height="400px">
 
-            <button class="btn">ADD TO CART</button>
+            <button class="btn" id="pay">BUY</button>
             <p class="text_under_btn">Premium Member: 5% discount</p>
             <p class="text_under_btn">Divibe Member: 10% discount</p>
         </div>
