@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catalog</title>
-    <link rel="shortcut icon" href="/img/Favicon.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="/img/icons/Favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="/src/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,11 +20,11 @@
 
 <body>
     <header class="header">
-        <%- include("_navbar.ejs") %>
-            <h1>Product Catalog</h1>
+        ${_navBar}
+        <h1>Product Catalog</h1>
     </header>
 
-    <%- include("_footer.ejs")%>
+    ${_footer}
 </body>
 
 </html>

@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REVEUX</title>
-    <link rel="shortcut icon" href="/img/Favicon.svg" type="image/x-icon">
-    <link rel="stylesheet" href="/src/style.css">
-    <link rel="stylesheet" href="/src/normalize.css">
+    <link rel="shortcut icon" href="/img/icons/Favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/src/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
@@ -17,18 +16,19 @@
 
 <body>
     <header class='fv header'>
-        <%- include("_navbar.ejs") %>
 
-            <div class="fh cover">
-                <div class="fv cover-welcome">
-                    <div>Luxury lifestyle retail</div>
-                    <button class="btn">Shop Now</button>
-                </div>
+        ${_navBar}
 
-                <div>
-                    <img src="img/cover-1.png" alt="Hot sales product">
-                </div>
+        <div class="fh cover">
+            <div class="fv cover-welcome">
+                <div>Luxury lifestyle retail</div>
+                <button class="btn">Shop Now</button>
             </div>
+
+            <div>
+                <img src="img/cover-1.png" alt="Hot sales product">
+            </div>
+        </div>
     </header>
 
     <section class="fv top-pick">
@@ -79,7 +79,7 @@
         </div>
     </section>
 
-    <%- include("_footer.ejs") %>
+    ${_footer}
 </body>
 
 </html>

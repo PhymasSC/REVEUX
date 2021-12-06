@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const items = require("../json/items.json");
+const items = require("../../client/json/items.json");
 
 items.forEach(item => {
 	
