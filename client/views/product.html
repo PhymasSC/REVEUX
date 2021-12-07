@@ -87,7 +87,7 @@
     </header>
     <div class="container">
         <div class="product_img">
-            <img src=<%- product.image%> alt="product" width="400px" height="400px">
+            <!-- <img src=<%- product.image%> alt="product" width="400px" height="400px"> -->
 
             <button class="btn" id="pay">BUY</button>
             <p class="text_under_btn">Premium Member: 5% discount</p>
@@ -96,18 +96,18 @@
         <div class="desc">
             <p class="title">PRODUCT NAME</p>
             <p class="text">
-                <%= product.name%>
+                <!-- <%= product.name%> -->
             </p>
             <p class="title">PRICE</p>
             <p class="text">
-                <%= product.price%>
+                <!-- <%= product.price%> -->
             </p>
             <p class="title">DESCRIPTION</p>
             <table>
-                <% Object.keys(product.description).forEach((key)=> { %>
+                <!-- <% Object.keys(product.description).forEach((key)=> { %>
                     <%- "<tr><td class='title'>" + key + "</td>" ; %>
                         <%- "<td class='text'>" + product?.description[key] + "</td></tr>" ; %>
-                            <% }); %>
+                            <% }); %> -->
             </table>
         </div>
     </div>

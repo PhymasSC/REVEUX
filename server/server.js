@@ -35,7 +35,9 @@ app.get("/", (req, res) => {
 app.get("/:filename", (req, res) => {
 	try {
 		let file = req.params.filename.toString();
+		console.log(file);
 		if (!isFileExist(file)) return res.render("404");
+		if (file === "product") return res.redirect("/");
 		res.render(file, {
 			partials: {
 				_navBar: `${__dirname}/../client/views/_navbar.html`,
