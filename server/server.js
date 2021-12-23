@@ -9,9 +9,6 @@ const productModel = require("./models/products.js");
 
 // routers
 const productRouter = require("./routes/product.js");
-const aboutUsRouter = require("./routes/about-us.js");
-const contactRouter = require("./routes/contact.js");
-const catalogRouter = require("./routes/catalog.js");
 const checkoutRouter = require("./routes/checkout.js");
 
 const port = process.env.PORT || 5000;
@@ -27,7 +24,7 @@ connection.on("connected", () => {
 	console.log("Database is connected successfully!");
 });
 
-productModel.find().then( (data) => console.log(data));
+productModel.find().then(data => console.log(data));
 
 // configure
 app.engine("html", es6Renderer);
@@ -47,6 +44,8 @@ app.get("/", (req, res) => {
 	});
 });
 
+app.use("/product", productRouter);
+
 app.get("/:filename", (req, res) => {
 	try {
 		let file = req.params.filename.toString();
@@ -65,10 +64,6 @@ app.get("/:filename", (req, res) => {
 });
 
 // Establish routers
-app.use("/product", productRouter);
-app.use("/about-us", aboutUsRouter);
-app.use("/contact-us", contactRouter);
-app.use("/catalog", catalogRouter);
 app.use("/checkout", checkoutRouter);
 
 app.listen(port);

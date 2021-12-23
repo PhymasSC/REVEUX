@@ -18,7 +18,7 @@
         .top-img {
             width: 100%;
             height: 100%;
-            background-image: url(<%- product?.cover %>);
+            background-image: url(${product?.cover});
             background-size: cover;
             background-position: 50% 50%;
         }
@@ -87,27 +87,28 @@
     </header>
     <div class="container">
         <div class="product_img">
-            <!-- <img src=<%- product.image%> alt="product" width="400px" height="400px"> -->
+            <img src=${product.image} alt="product" width="400px" height="400px">
 
             <button class="btn" id="pay">BUY</button>
             <p class="text_under_btn">Premium Member: 5% discount</p>
             <p class="text_under_btn">Divine Member: 10% discount</p>
         </div>
         <div class="desc">
-            <p class="title">PRODUCT NAME</p>
-            <p class="text">
-                <!-- <%= product.name%> -->
+            <p class="title">
+                ${product.name}
             </p>
             <p class="title">PRICE</p>
             <p class="text">
-                <!-- <%= product.price%> -->
+                ${product.price}
             </p>
             <p class="title">DESCRIPTION</p>
             <table>
-                <!-- <% Object.keys(product.description).forEach((key)=> { %>
-                    <%- "<tr><td class='title'>" + key + "</td>" ; %>
-                        <%- "<td class='text'>" + product?.description[key] + "</td></tr>" ; %>
-                            <% }); %> -->
+                ${Object.keys(product.description).map( key => `
+                <tr>
+                    <td class='title'>${key}</td>
+                    <td class='text'>${product?.description[key]}</td>
+                </tr>
+                `).join(" ")}
             </table>
         </div>
     </div>
