@@ -1,5 +1,5 @@
 const express = require("express");
-const stripe = require("stripe")(process.env.SECRET_KEY);
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const router = express.Router();
 
 const items = require("../../client/json/items.json");
