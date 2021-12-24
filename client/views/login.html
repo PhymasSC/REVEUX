@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="shortcut icon" href="/img/icons/Favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="/src/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+
+    <style>
+        .head {
+            font-size: 100px;
+            text-align: center;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .input {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        input {
+            padding: 8px 5px;
+            width: 38em;
+            border: 1px solid rgb(0, 0, 0);
+            padding: .7em;
+            margin-bottom: 1em;
+            font-size: 1rem;
+            border-radius: .3em;
+            font-family: inherit;
+        }
+
+        .submit {
+            display: flex;
+            padding: .5em 3em;
+        }
+
+        a {
+            color: black;
+            font-size: 1.2em;
+        }
+
+        .btn {
+            color: white;
+            background-color: black;
+            padding: 8px 70px;
+            border: none;
+            border-radius: .3em;
+            margin-left: 3em;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        ${_navBar}
+        <h1 class="head">Login</h1>
+    </header>
+    <form class="content">
+        <div class="input">
+            <input type="text" placeholder="Email Address" required>
+            <input type="password" placeholder="Password" required>
+        </div>
+        <div class="submit">
+            <a href="#">Forgot Password</a>
+            <button type="submit" class="btn">LOGIN</button>
+        </div>
+    </form>
+    <footer>
+        ${_footer}
+    </footer>
+</body>
+
+</html>

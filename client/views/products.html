@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="shortcut icon" href="/img/icons/Favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="/src/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+
+    <style>
+        .content {
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            grid-gap: 10px;
+        }
+
+        #search {
+            padding: 5px 5px;
+        }
+
+        .collapse {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .btn {
+            margin-bottom: 10px;
+            padding: 10px 50px 10px 50px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 0.2em;
+        }
+
+        img {
+            width: 300px;
+            height: 300px;
+            padding: 15px;
+            background-color: rgba(204, 204, 204, 0.274);
+            border-radius: .3em;
+        }
+
+        .product-img {
+            display: grid;
+            grid-gap: 10px;
+            grid-column: auto;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .product-img>div {
+            padding: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        ${_navBar}
+        <h1>Product Catalog</h1>
+    </header>
+    <div class="content">
+        <div class="side-bar">
+            <div class="search">
+                <input type="search" name="search" id="search" placeholder="Search">
+            </div>
+            <div class="collapse" style="margin-top: 10px;">
+                <div>
+                    <input type="checkbox" name="essential oil" id="hair">Essential Oil<br>
+                    <input type="checkbox" name="hair conditioner" id="hair">Hair Conditioner <br>
+                    <input type="checkbox" name="shampoo" id="hair">Shampoo<br><br>
+                </div>
+                <button class="btn">Hair Care</button>
+            </div>
+            <div class="collapse">
+                <div>
+                    <input type="checkbox" name="concealer" id="makeup">Concealer <br>
+                    <input type="checkbox" name="eyebrow" id="makeup">Eyebrow<br>
+                    <input type="checkbox" name="eyeshadow" id="makeup">Eye Shadow<br>
+                    <input type="checkbox" name="foundation" id="makeup">Foundation<br>
+                    <input type="checkbox" name="lipstick" id="makeup">Lipstick<br>
+                    <input type="checkbox" name="mascara" id="makeup">Mascara<br>
+                    <input type="checkbox" name="blusher" id="makeup">Blusher<br><br>
+                </div>
+                <button class="btn">Make up</button>
+            </div>
+            <div class="collapse">
+                <div>
+                    <input type="checkbox" name="eyecream" id="skin">Eye Cream <br>
+                    <input type="checkbox" name="mask" id="skin">Mask<br>
+                    <input type="checkbox" name="nightcream" id="skin">Night Cream<br>
+                    <input type="checkbox" name="serum" id="skin">Serum<br>
+                    <input type="checkbox" name="skincream" id="skin">Skin Cream<br>
+                    <input type="checkbox" name="toner" id="skin">Toner<br><br>
+                </div>
+                <button class="btn">Skin care</button>
+            </div>
+            <div class="collapse">
+                <div>
+                    <input type="checkbox" name="bodywash" id="body">Body Wash
+                    <input type="checkbox" name="lotion" id="body">Body Lotion
+                </div>
+                <button class="btn">Body Care</button>
+            </div>
+            <div class="collapse">
+                <button class="btn">Fragrance</button>
+            </div>
+        </div>
+
+        <div class="product-img">
+            <div class="img">
+                <img src="client\img\products\fragrance\perfume\perfume-01.png" alt="perfume1">
+                <strong>Reveux-301</strong>
+                <p>Price: RM 299.99</p>
+                <P>Description: Lavender</P>
+                <button>ADD TO CART</button>
+            </div>
+            <div class="img">
+                <img src="client\img\products\fragrance\perfume\perfume-02.png" alt="perfume2">
+                <strong>Reveux-302</strong>
+                <p>Price: RM 299.99</p>
+                <P>Description: Lavender</P>
+                <button>ADD TO CART</button>
+            </div>
+            <div class="img">
+                <img src="client\img\products\fragrance\perfume\perfume-03.png" alt="perfume3">
+                <strong>Reveux-303</strong>
+                <p>Price: RM 299.99</p>
+                <P>Description: Lavender</P>
+                <button>ADD TO CART</button>
+            </div>
+            <div class="img">
+                <img src="client\img\products\fragrance\perfume\perfume-04.png" alt="perfume4">
+                <strong>Reveux-304</strong>
+                <p>Price: RM 299.99</p>
+                <P>Description: Lavender</P>
+                <button>ADD TO CART</button>
+            </div>
+            <div class="img">
+                <img src="client\img\products\fragrance\perfume\perfume-05.png" alt="perfume5">
+                <strong>Reveux-305</strong>
+                <p>Price: RM 299.99</p>
+                <P>Description: Lavender</P>
+                <button>ADD TO CART</button>
+            </div>
+            <div class="img">
+                <img src="client\img\products\fragrance\perfume\perfume-06.png" alt="perfume6">
+                <strong>Reveux-306</strong>
+                <p>Price: RM 299.99</p>
+                <P>Description: Lavender</P>
+                <button>ADD TO CART</button>
+            </div>
+            <div class="img">
+                <img src="client\img\products\fragrance\perfume\perfume-07.png" alt="perfume7">
+                <strong>Reveux-307</strong>
+                <p>Price: RM 299.99</p>
+                <P>Description: Lavender</P>
+                <button>ADD TO CART</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        ${_footer}
+    </footer>
+</body>
+
+</html>
