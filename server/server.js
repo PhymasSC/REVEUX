@@ -38,12 +38,13 @@ const isFileExist = fname =>
 app.get("/", (req, res) => {
 	res.render("index", {
 		partials: {
-			_navBar: `${__dirname}/../client/views/_navbar.html`,
+			_navBar: `${__dirname}/../client/views/$navbar.html`,
 			_footer: `${__dirname}/../client/views/_footer.html`
 		}
 	});
 });
-
+// Establish routers
+app.use("/checkout", checkoutRouter);
 app.use("/product", productRouter);
 
 app.get("/:filename", (req, res) => {
@@ -62,8 +63,5 @@ app.get("/:filename", (req, res) => {
 		console.error(e);
 	}
 });
-
-// Establish routers
-app.use("/checkout", checkoutRouter);
 
 app.listen(port);

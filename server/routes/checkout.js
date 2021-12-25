@@ -3,6 +3,7 @@ const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const router = express.Router();
 
 const items = require("../../client/json/items.json");
+
 router.post("/", async (req, res) => {
 	try {
 		const session = await stripe.checkout.sessions.create({
