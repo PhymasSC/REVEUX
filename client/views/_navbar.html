@@ -1,80 +1,90 @@
-<div class="font-Fauna-one top-0 left-0 right-0 font-bold p-4 bg-[#e9e9f7]/70 backdrop-blur-md fixed w-full z-10 shadow-md"
-    x-data="{ isOpen: false}">
-    <div class=" flex items-center justify-between space-x-4 lg:space-x-10">
-        <div class="flex lg:w-0 lg:flex-1">
-            <div class="tracking-widest uppercase px-3 py-1 text-lg font-medium font-Cinzel ">
-                REVEUX™
+<div class="relative">
+    <div class="top-0 left-0 right-0 font-bold p-4 w-full">
+    </div>
+    <div class="font-Fauna-one top-0 left-0 right-0 font-bold p-4 bg-[#e9e9f7]/70 backdrop-blur-md fixed w-full z-10 shadow-md"
+        x-data="{ isOpen: false}">
+        <div class=" flex items-center justify-between space-x-4 lg:space-x-10">
+            <div class="flex lg:w-0 lg:flex-1">
+                <div class="tracking-widest uppercase px-3 py-1 text-lg font-medium font-Cinzel ">
+                    REVEUX™
+                </div>
             </div>
-        </div>
 
-        <nav class="capitalize hidden space-x-8 text-sm font-medium md:flex">
-            <a class="text-gray-500 hover:text-gray-800" href="/">Home</a>
-            <a class="text-gray-500 hover:text-gray-800" href="/catalog">Products</a>
-            <a class="text-gray-500 hover:text-gray-800" href="/about-us">About Us</a>
-            <a class="text-gray-500 hover:text-gray-800" href="/contact-us">Contact Us</a>
-        </nav>
+            <nav class="capitalize hidden space-x-8 text-sm font-medium md:flex">
+                <a class="text-gray-500 hover:text-gray-900 hover:after:content-[''] hover:after:border-b-2 hover:after:w-full hover:after:-translate-x-full hover:after:translate-y-6 relative hover:after:border-black hover:after:absolute transition-[after] duration-100 ease-in-out"
+                    href="/">Home</a>
+                <a class="text-gray-500 hover:text-gray-900 hover:after:content-[''] hover:after:border-b-2 hover:after:w-full hover:after:-translate-x-full hover:after:translate-y-6 relative hover:after:border-black hover:after:absolute transition-[after] duration-100 ease-in-out"
+                    href="/catalog">Products</a>
+                <a class="text-gray-500 hover:text-gray-900 hover:after:content-[''] hover:after:border-b-2 hover:after:w-full hover:after:-translate-x-full hover:after:translate-y-6 relative hover:after:border-black hover:after:absolute transition-[after] duration-100 ease-in-out"
+                    href="/about-us">About Us</a>
+                <a class="text-gray-500 hover:text-gray-900 hover:after:content-[''] hover:after:border-b-2 hover:after:w-full hover:after:-translate-x-full hover:after:translate-y-6 relative hover:after:border-black hover:after:absolute transition-[after] duration-100 ease-in-out"
+                    href="/contact-us">Contact Us</a>
+            </nav>
 
-        <div class="items-center justify-end flex-1 hidden space-x-4 sm:flex">
-            <a class="px-5 py-2 text-sm font-medium text-gray-500 bg-gray-100 rounded-lg" href="/login"> Log in </a>
+            <div class="items-center justify-end flex-1 hidden space-x-4 sm:flex">
+                <a class="px-5 py-2 text-sm font-medium text-gray-500 bg-gray-100 rounded-lg" href="/login"> Log in </a>
 
-            <a class="px-5 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg" href=""> Sign up </a>
-        </div>
+                <a class="px-5 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg" href=""> Sign up </a>
+            </div>
 
-        <div class="lg:hidden" @click="isOpen = !isOpen">
-            <button class="p-2 text-gray-600 bg-gray-100 bg-opacity-50 rounded-lg" type="button">
-                <span class="sr-only">Open menu</span>
-                <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
-                </svg>
-            </button>
-        </div>
+            <div class="lg:hidden" @click="isOpen = !isOpen">
+                <button class="p-2 text-gray-600 bg-gray-100 bg-opacity-50 rounded-lg" type="button">
+                    <span class="sr-only">Open menu</span>
+                    <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" />
+                    </svg>
+                </button>
+            </div>
 
-        <div class="absolute z-10 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden" x-show=" isOpen"
-            @click="isOpen = false" @click.away=" isOpen = false" x-transition:enter="transition duration-300 -ml-64"
-            x-transition:enter-start="-translate-y-64 ease-in-out" x-transition:enter-end="transform translate-y-0"
-            x-transition:leave="transition duration-300" x-transition:enter-start=""
-            x-transition:leave-end="transform -translate-y-64">
-            <div class="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
-                <div class="px-5 pt-4 flex items-center justify-between">
-                    <div>
-                        <div class="tracking-widest uppercase px-3 py-1 text-lg font-medium ">
-                            REVEUX™
+            <div class="absolute z-10 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
+                x-show=" isOpen" @click="isOpen = false" @click.away=" isOpen = false"
+                x-transition:enter="transition duration-300 -ml-64"
+                x-transition:enter-start="-translate-y-64 ease-in-out" x-transition:enter-end="transform translate-y-0"
+                x-transition:leave="transition duration-300" x-transition:enter-start=""
+                x-transition:leave-end="transform -translate-y-64">
+                <div class="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
+                    <div class="px-5 pt-4 flex items-center justify-between">
+                        <div>
+                            <div class="tracking-widest uppercase px-3 py-1 text-lg font-medium ">
+                                REVEUX™
+                            </div>
+                        </div>
+                        <div class="-mr-2">
+                            <button type="button"
+                                class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                                @click="open = false">
+                                <span class="sr-only">Close main menu</span>
+                                <!-- Heroicon name: outline/x -->
+                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
                         </div>
                     </div>
-                    <div class="-mr-2">
-                        <button type="button"
-                            class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
-                            @click="open = false">
-                            <span class="sr-only">Close main menu</span>
-                            <!-- Heroicon name: outline/x -->
-                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                        </button>
+                    <div class="px-2 pt-2 pb-3 space-y-1">
+                        <a href="/"
+                            class="capitalize block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Home</a>
+
+                        <a href="/catalog"
+                            class="capitalize block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Products</a>
+
+                        <a href="/about-us"
+                            class="capitalize block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">About
+                            Us</a>
+
+                        <a href="/contact-us"
+                            class="capitalize block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Contact
+                            Us</a>
                     </div>
+                    <a href="/login"
+                        class="block w-full px-5 py-3 text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100">
+                        Log in
+                    </a>
                 </div>
-                <div class="px-2 pt-2 pb-3 space-y-1">
-                    <a href="/"
-                        class="capitalize block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Home</a>
-
-                    <a href="/catalog"
-                        class="capitalize block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Products</a>
-
-                    <a href="/about-us"
-                        class="capitalize block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">About
-                        Us</a>
-
-                    <a href="/contact-us"
-                        class="capitalize block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Contact
-                        Us</a>
-                </div>
-                <a href="/login"
-                    class="block w-full px-5 py-3 text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100">
-                    Log in
-                </a>
             </div>
         </div>
     </div>

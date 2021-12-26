@@ -38,7 +38,7 @@ const isFileExist = fname =>
 app.get("/", (req, res) => {
 	res.render("index", {
 		partials: {
-			_navBar: `${__dirname}/../client/views/$navbar.html`,
+			_navBar: `${__dirname}/../client/views/_navbar.html`,
 			_footer: `${__dirname}/../client/views/_footer.html`
 		}
 	});
@@ -51,7 +51,13 @@ app.get("/:filename", (req, res) => {
 	try {
 		let file = req.params.filename.toString();
 		console.log(file);
-		if (!isFileExist(file)) return res.render("404");
+		if (!isFileExist(file))
+			return res.render("404", {
+				partials: {
+					_navBar: `${__dirname}/../client/views/_navbar.html`,
+					_footer: `${__dirname}/../client/views/_footer.html`
+				}
+			});
 		if (file === "product") return res.redirect("/");
 		res.render(file, {
 			partials: {
