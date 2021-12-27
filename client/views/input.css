@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .theme {
+        @apply text-[#151b2e] bg-gradient-to-b from-[#e9e9f7] to-[hsl(240,47%,87%)] h-full w-full scrollbar-thin overflow-y-scroll 
+    }
+}
