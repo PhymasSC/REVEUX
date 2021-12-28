@@ -9,6 +9,7 @@ const productModel = require("./models/products.js");
 
 // routers
 const productRouter = require("./routes/product.js");
+const productsRouter = require("./routes/products.js");
 const checkoutRouter = require("./routes/checkout.js");
 
 const port = process.env.PORT || 5000;
@@ -46,6 +47,7 @@ app.get("/", (req, res) => {
 // Establish routers
 app.use("/checkout", checkoutRouter);
 app.use("/product", productRouter);
+app.use("/products", productsRouter);
 
 app.get("/:filename", (req, res) => {
 	try {
@@ -68,6 +70,11 @@ app.get("/:filename", (req, res) => {
 	} catch (e) {
 		console.error(e);
 	}
+});
+
+
+app.get("/", (req, res) => {
+	res.render("products", {products: "hello world"})
 });
 
 app.listen(port);
