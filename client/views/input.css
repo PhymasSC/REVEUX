@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    ::-webkit-scrollbar-thumb {
+        background-color: #bc7d1b;
+        box-shadow: inset 0 0 6em  #bc7d10;
+        border-radius: 3em;
+    }
+
+    body {
+        @apply theme  font-mulish
+    }
+}
+
 @layer components {
     .theme {
         @apply text-[#182A6A] bg-gradient-to-b from-[#fdf5e7] to-[#fbebd0] h-full w-full scrollbar-thin overflow-y-scroll 
