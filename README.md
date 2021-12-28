@@ -5,7 +5,7 @@ A web design assignment of subject CSF3206 in University of Malaysia Terengganu.
 
 
 ## Prerequisites
-- [Node](https://nodejs.org/en/)
+- [NPM](https://nodejs.org/en/)
 
 ## Getting started
 ### Running the project locally
@@ -61,3 +61,12 @@ STRIPE_SECRET_KEY=
 DB_URL=
 ```
 REVEUX can be now accessed at http://localhost:5000/.
+
+## Technologies
+- Server is set up with [Node js](https://nodejs.org/en/) and [Express js](https://expressjs.com/).
+- [Tailwind css](https://tailwindcss.com/) is used for styling.
+- Payments are processed with [Stripe](https://stripe.com).
+- [Swiper js](https://swiperjs.com/) is used for performing carousel.
+- [Alpine js](https://alpinejs.dev/) is used for dropdown menu.
+- [Express es6 template engine](https://github.com/dondido/express-es6-template-engine) is used as the template engine.
+- [Atlas MongoDB](https://www.mongodb.com/atlas/database) is used as database.
