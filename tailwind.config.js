@@ -13,8 +13,9 @@ module.exports = {
 				sans: ["ui-sans-serif", "system-ui"],
 				serif: ["ui-serif", "Georgia"],
 				mono: ["ui-monospace", "SFMono-Regular"],
-				"Fauna-one": ["'Fauna One'", "sans-serif"],
-				Cinzel: ["Cinzel", "sans-serif"]
+				display: ["mulish"],
+				mulish: ["mulish", "sans-serif"],
+				Cinzel: ["cinzel", "sans-serif"]
 			},
 			backgroundSize: {
 				auto: "auto",

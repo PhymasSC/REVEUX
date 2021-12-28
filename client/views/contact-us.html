@@ -24,17 +24,100 @@
     <meta property="twitter:image"
         content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
     <link rel="shortcut icon" href="/img/icons/Favicon.svg" type="image/x-icon">
-    <link rel="stylesheet" href="/src/output.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Fauna+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/output.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js" defer></script>
 </head>
 
-<body class="theme">
-    <header class="header">
+<body class="theme scrollbar-thumb-yellow-700 scrollbar-track-orange-200 font-mulish">
+
+    <header>
         ${_navBar}
+        <section class="py-20">
+            <div class="container px-4 mx-auto">
+                <div class="flex flex-wrap -mx-3">
+                    <div class="w-full lg:w-1/2 px-3">
+                        <div class="max-w-sm">
+                            <span class="text-sm text-gray-400">Contact Us</span>
+                            <h2 class="mt-2 text-4xl font-bold font-heading">We will be glad to hear from you!</h2>
+                        </div>
+                        <div class="mt-10 lg:mt-24">
+                            <div class="mb-10 leading-relaxed">
+                                <h3 class="text-sm text-gray-400">Phone</h3>
+                                <p>+ 60 123-456-789</p>
+                            </div>
+                            <div class="mb-10 leading-relaxed">
+                                <h4 class="text-sm text-gray-400">E-mail</h4>
+                                <p>info@metis.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-1/2 px-3">
+                        <form>
+                            <div class="mb-4 text-sm">
+                                <span class="mr-4 font-semibold">Departament:</span>
+                                <label class="mr-4">
+                                    <input class="mr-1" type="radio" name="department" value="1" checked="">
+                                    <span>Support</span>
+                                </label>
+                                <label>
+                                    <input class="mr-1" type="radio" name="department" value="2">
+                                    <span>Sales</span>
+                                </label>
+                            </div>
+                            <div class="mb-4">
+                                <label for="subject" class="label-input-field">
+                                    <span>Subject</span>
+                                </label>
+                                <input class="input-field" type="text" placeholder="Subject">
+                            </div>
+                            <div class="mb-4">
+                                <label for="name" class="label-input-field">
+                                    <span>Full name</span>
+                                </label>
+                                <input class="input-field" type="text" placeholder="Name">
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="label-input-field">
+                                    <span>Email
+                                        address</span>
+                                </label>
+                                <input class="input-field" type="email" placeholder="Your Email">
+                            </div>
+                            <div class="mb-4">
+                                <label for="text" class="label-input-field">
+                                    <span>Message</span>
+                                </label>
+                                <textarea class="input-field min-h-[10rem] max-h-[20rem]" type="text"
+                                    placeholder="Message..."></textarea>
+                            </div>
+                            <div class="mb-4">
+                                <label class="flex px-2 rounded bg-white/30 cursor-pointer">
+                                    <input class="hidden" type="file" placeholder="Choose file.." name="Choose file">
+                                    <div class="my-1 px-4 py-3 text-xs font-semibold">
+                                        Browse files</div>
+                                </label>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <label>
+                                    <input class="checkbox" type="checkbox" name="terms" value="1">
+                                    <span class="text-sm font-semibold">I agree to terms and conditions.</span>
+                                </label>
+                                <button class="py-4 px-8 text-sm primary-btn" type="submit">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <!-- <header class="header">
         <div class="section">
             <h1>Contact us</h1>
             <p>Feel free to contact us and we will get back as soon as possible</p>
@@ -46,7 +129,7 @@
                 <input type="button" value="SEND" class="btn send">
             </form>
         </div>
-    </header>
+    </header> -->
 
     ${_footer}
 </body>

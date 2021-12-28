@@ -4,6 +4,33 @@
 
 @layer components {
     .theme {
-        @apply text-[#151b2e] bg-gradient-to-b from-[#e9e9f7] to-[hsl(240,47%,87%)] h-full w-full scrollbar-thin overflow-y-scroll 
+        @apply text-[#182A6A] bg-gradient-to-b from-[#fdf5e7] to-[#fbebd0] h-full w-full scrollbar-thin overflow-y-scroll 
     }
+    .input-field {
+        @apply block w-full px-5 py-3 text-base placeholder-gray-300 transition duration-500 ease-in-out transform border border-transparent bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300 rounded-lg 
+    }
+    .label-input-field {
+        @apply block text-sm font-medium
+    }
+    .checkbox {
+        @apply w-4 h-4 text-blue-600 border-gray-200 rounded focus:ring-blue-500 text-sm mr-2
+    }
+    .primary-btn {
+        @apply px-10 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-[#182A6A] rounded-xl hover:bg-[#0e193e] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500
+    }
+    .secondary-btn {
+        @apply text-[#182A6A] transition duration-500 ease-in-out transform border-2 border-white  rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 bg-white/70 hover:bg-white/50
+    }
+
+    .smooth-shadow-light{
+        box-shadow:
+            0px 1.7px 2.2px hsl(38deg 97% 46% / 2%), 
+            0px 4px 5.3px hsl(38deg 97% 46% / 3%), 
+            0px 7.5px 10px hsl(38deg 97% 46% / 4%), 
+            0px 13.4px 17.9px hsl(38deg 97% 46% / 4%), 
+            0px 25.1px 33.4px hsl(38deg 97% 46% / 5%), 
+            0px 60px 80px hsl(38deg 97% 46% / 7%)
+    }
+    
+
 }

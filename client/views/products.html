@@ -6,12 +6,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
+    <meta name="title" content="REVEUX">
+    <meta name="description" content="REVEUX is an ecommerce website which sells cosmetic related products. ">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://metatags.io/">
+    <meta property="og:title" content="REVEUX">
+    <meta property="og:description" content="REVEUX is an ecommerce website which sells cosmetic related products. ">
+    <meta property="og:image"
+        content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://metatags.io/">
+    <meta property="twitter:title" content="REVEUX">
+    <meta property="twitter:description"
+        content="REVEUX is an ecommerce website which sells cosmetic related products. ">
+    <meta property="twitter:image"
+        content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
     <link rel="shortcut icon" href="/img/icons/Favicon.svg" type="image/x-icon">
-    <link rel="stylesheet" href="/src/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/output.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js" defer></script>
 
     <style>
         .content {
@@ -59,9 +79,226 @@
     </style>
 </head>
 
-<body>
-    <header class="header">
+<body class="theme scrollbar-thumb-blue-500 scrollbar-track-blue-300">
+    <header>
         ${_navBar}
+
+        <div class="2xl:container 2xl:mx-auto">
+            <div class="bg-gray-50 dark:bg-gray-900 text-center lg:py-10 md:py-8 py-6">
+                <p
+                    class="w-10/12 mx-auto md:w-full font-semibold lg:text-4xl text-3xl lg:leading-9 md:leading-7 dark:text-white leading-9 text-center text-gray-800">
+                    Summer Collection Vol-1</p>
+            </div>
+            <div class="py-6 lg:px-20 md:px-6 px-4">
+                <p class="font-normal text-sm leading-3 text-gray-600 dark:text-gray-300">Home / Shop by Category /
+                    Women</p>
+                <hr class="w-full bg-gray-200 my-6" />
+
+                <div class="flex justify-between items-center">
+                    <div class="flex space-x-3 justify-center items-center text-gray-800 dark:text-white">
+                        <img class="dark:hidden"
+                            src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-5-svg1.svg" alt="toggler">
+                        <img class="hidden dark:block" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-5-svg1dark.svg
+
+" alt="toggler">
+                        <p class="font-normal text-base leading-4 text-gray-800 dark:text-white">Filter</p>
+                    </div>
+                    <p
+                        class="cursor-pointer hover:underline duration-100 font-normal text-base leading-4 text-gray-600 dark:text-gray-300">
+                        Showing 18 products</p>
+                </div>
+
+                <div
+                    class="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 lg:gap-y-12 lg:gap-x-8 sm:gap-y-10 sm:gap-x-6 gap-y-6 lg:mt-12 mt-10">
+                    <div class="relative">
+                        <div class="absolute top-0 left-0 py-2 px-4 bg-white bg-opacity-50">
+                            <p class="text-xs leading-3 text-gray-800">New</p>
+                        </div>
+                        <div class="relative group">
+                            <div
+                                class="flex justify-center items-center opacity-0 bg-gradient-to-t from-gray-800 via-gray-800 to-opacity-30 group-hover:opacity-50 absolute top-0 left-0 h-full w-full">
+                            </div>
+                            <img class="w-full" src="https://i.ibb.co/HqmJYgW/gs-Kd-Pc-Iye-Gg.png"
+                                alt="A girl Posing Image" />
+                            <div class="absolute bottom-0 p-8 w-full opacity-0 group-hover:opacity-100">
+                                <button
+                                    class="dark:bg-gray-800 dark:text-gray-300 font-medium text-base leading-4 text-gray-800 bg-white py-3 w-full">Add
+                                    to bag</button>
+                                <button
+                                    class="bg-transparent font-medium text-base leading-4 border-2 border-white py-3 w-full mt-2 text-white">Quick
+                                    View</button>
+                            </div>
+                        </div>
+                        <p class="font-normal dark:text-white text-xl leading-5 text-gray-800 md:mt-6 mt-4">Wilfred
+                            Alana Dress</p>
+                        <p class="font-semibold dark:text-gray-300 text-xl leading-5 text-gray-800 mt-4">$1550</p>
+                        <p class="font-normal dark:text-gray-300 text-base leading-4 text-gray-600 mt-4">2 colours</p>
+                    </div>
+                    <div class="relative">
+                        <div class="bg-white bg-opacity-50 absolute top-0 right-0 px-2 py-1">
+                            <p class="text-white fonr-normal text-base leading-4">XS , S , M , L</p>
+                        </div>
+                        <div class="relative group">
+                            <div
+                                class="flex justify-center items-center opacity-0 bg-gradient-to-t from-gray-800 via-gray-800 to-opacity-30 group-hover:opacity-50 absolute top-0 left-0 h-full w-full">
+                            </div>
+                            <img class="w-full" src="https://i.ibb.co/m6V0MzR/gs-Kd-Pc-Iye-Gg-1.png"
+                                alt="A girl wearing white suit and googgles" />
+                            <div class="absolute bottom-0 p-8 w-full opacity-0 group-hover:opacity-100">
+                                <button
+                                    class="dark:bg-gray-800 dark:text-gray-300 font-medium text-base leading-4 text-gray-800 bg-white py-3 w-full">Add
+                                    to bag</button>
+                                <button
+                                    class="bg-transparent font-medium text-base leading-4 border-2 border-white py-3 w-full mt-2 text-white">Quick
+                                    View</button>
+                            </div>
+                        </div>
+                        <p class="font-normal dark:text-white text-xl leading-5 text-gray-800 md:mt-6 mt-4">Wilfred
+                            Alana Dress</p>
+                        <p class="font-semibold dark:text-gray-300 text-xl leading-5 text-gray-800 mt-4">$1800</p>
+                    </div>
+                    <div>
+                        <div class="relative group">
+                            <div
+                                class="flex justify-center items-center opacity-0 bg-gradient-to-t from-gray-800 via-gray-800 to-opacity-30 group-hover:opacity-50 absolute top-0 left-0 h-full w-full">
+                            </div>
+                            <img class="w-full" src="https://i.ibb.co/6g1KhhF/pexels-django-li-2956641-1.png"
+                                alt="A girl wearing dark blue suit and posing" />
+                            <div class="absolute bottom-0 p-8 w-full opacity-0 group-hover:opacity-100">
+                                <button
+                                    class="dark:bg-gray-800 dark:text-gray-300 font-medium text-base leading-4 text-gray-800 bg-white py-3 w-full">Add
+                                    to bag</button>
+                                <button
+                                    class="bg-transparent font-medium text-base leading-4 border-2 border-white py-3 w-full mt-2 text-white">Quick
+                                    View</button>
+                            </div>
+                        </div>
+                        <p class="font-normal dark:text-white text-xl leading-5 text-gray-800 md:mt-6 mt-4">Wilfred
+                            Alana Dress</p>
+                        <p class="font-semibold dark:text-gray-300 text-xl leading-5 text-gray-800 mt-4">$1550</p>
+                        <p class="font-normal dark:text-gray-300 text-base leading-4 text-gray-600 mt-4">2 colours</p>
+                    </div>
+                    <div>
+                        <div class="relative group">
+                            <div
+                                class="flex justify-center items-center opacity-0 bg-gradient-to-t from-gray-800 via-gray-800 to-opacity-30 group-hover:opacity-50 absolute top-0 left-0 h-full w-full">
+                            </div>
+                            <img class="w-full" src="https://i.ibb.co/KLDN7Vt/gbarkz-vq-Knu-G8-Ga-Qc-unsplash.png"
+                                alt="A girl posing and wearing white suit" />
+                            <div class="absolute bottom-0 p-8 w-full opacity-0 group-hover:opacity-100">
+                                <button
+                                    class="dark:bg-gray-800 dark:text-gray-300 font-medium text-base leading-4 text-gray-800 bg-white py-3 w-full">Add
+                                    to bag</button>
+                                <button
+                                    class="bg-transparent font-medium text-base leading-4 border-2 border-white py-3 w-full mt-2 text-white">Quick
+                                    View</button>
+                            </div>
+                        </div>
+
+                        <p class="font-normal text-xl dark:text-white leading-5 text-gray-800 md:mt-6 mt-4">Flared
+                            Cotton Tank Top</p>
+                        <p class="font-semibold dark:text-gray-300 text-xl leading-5 text-gray-800 mt-4">$1800</p>
+                    </div>
+                    <div>
+                        <div class="relative group">
+                            <div
+                                class="flex justify-center items-center opacity-0 bg-gradient-to-t from-gray-800 via-gray-800 to-opacity-30 group-hover:opacity-50 absolute top-0 left-0 h-full w-full">
+                            </div>
+                            <img class="w-full" src="https://i.ibb.co/5vxgf7V/pexels-quang-anh-ha-nguyen-884979-1.png"
+                                alt="Girl posing for an Image" />
+                            <div class="absolute bottom-0 p-8 w-full opacity-0 group-hover:opacity-100">
+                                <button
+                                    class="dark:bg-gray-800 dark:text-gray-300 font-medium text-base leading-4 text-gray-800 bg-white py-3 w-full">Add
+                                    to bag</button>
+                                <button
+                                    class="bg-transparent font-medium text-base leading-4 border-2 border-white py-3 w-full mt-2 text-white">Quick
+                                    View</button>
+                            </div>
+                        </div>
+
+                        <p class="font-normal dark:text-white text-xl leading-5 text-gray-800 md:mt-6 mt-4">Flared
+                            Cotton Tank Top</p>
+                        <p class="font-semibold dark:text-gray-300 text-xl leading-5 text-gray-800 mt-4">$1800</p>
+                    </div>
+                    <div>
+                        <div class="relative group">
+                            <div
+                                class="flex justify-center items-center opacity-0 bg-gradient-to-t from-gray-800 via-gray-800 to-opacity-30 group-hover:opacity-50 absolute top-0 left-0 h-full w-full">
+                            </div>
+                            <img class="w-full"
+                                src="https://i.ibb.co/HKFXSrQ/pietra-schwarzler-l-SLq-x-Qd-FNI-unsplash.png"
+                                alt="A blonde girl posing" />
+                            <div class="absolute bottom-0 p-8 w-full opacity-0 group-hover:opacity-100">
+                                <button
+                                    class="dark:bg-gray-800 dark:text-gray-300 font-medium text-base leading-4 text-gray-800 bg-white py-3 w-full">Add
+                                    to bag</button>
+                                <button
+                                    class="bg-transparent font-medium text-base leading-4 border-2 border-white py-3 w-full mt-2 text-white">Quick
+                                    View</button>
+                            </div>
+                        </div>
+
+                        <p class="font-normal dark:text-white text-xl leading-5 text-gray-800 md:mt-6 mt-4">Wilfred
+                            Alana Dress</p>
+                        <p class="font-semibold text-xl leading-5 text-gray-800 mt-4">$1550</p>
+                        <p class="font-normal dark:text-gray-300 text-base leading-4 text-gray-600 mt-4">2 colours</p>
+                    </div>
+                    <div>
+                        <div class="relative group">
+                            <div
+                                class="flex justify-center items-center opacity-0 bg-gradient-to-t from-gray-800 via-gray-800 to-opacity-30 group-hover:opacity-50 absolute top-0 left-0 h-full w-full">
+                            </div>
+                            <img class="w-full" src="https://i.ibb.co/BKsqym2/tracey-hocking-ve-Zp-XKU71c-unsplash.png"
+                                alt="A girl wearing white suit posing in desert" />
+                            <div class="absolute bottom-0 p-8 w-full opacity-0 group-hover:opacity-100">
+                                <button
+                                    class="dark:bg-gray-800 dark:text-gray-300 font-medium text-base leading-4 text-gray-800 bg-white py-3 w-full">Add
+                                    to bag</button>
+                                <button
+                                    class="bg-transparent font-medium text-base leading-4 border-2 border-white py-3 w-full mt-2 text-white">Quick
+                                    View</button>
+                            </div>
+                        </div>
+
+                        <p class="font-normal dark:text-white text-xl leading-5 text-gray-800 md:mt-6 mt-4">Flared
+                            Cotton Tank Top</p>
+                        <p class="font-semibold dark:text-gray-300 text-xl leading-5 text-gray-800 mt-4">$1800</p>
+                    </div>
+                    <div>
+                        <div class="relative group">
+                            <div
+                                class="flex justify-center items-center opacity-0 bg-gradient-to-t from-gray-800 via-gray-800 to-opacity-30 group-hover:opacity-50 absolute top-0 left-0 h-full w-full">
+                            </div>
+                            <img class="w-full" src="https://i.ibb.co/mbrk1DK/pexels-h-i-nguy-n-4034532.png"
+                                alt="Girl wearing pink suit posing" />
+                            <div class="absolute bottom-0 p-8 w-full opacity-0 group-hover:opacity-100">
+                                <button
+                                    class="dark:bg-gray-800 dark:text-gray-300 font-medium text-base leading-4 text-gray-800 bg-white py-3 w-full">Add
+                                    to bag</button>
+                                <button
+                                    class="bg-transparent font-medium text-base leading-4 border-2 border-white py-3 w-full mt-2 text-white">Quick
+                                    View</button>
+                            </div>
+                        </div>
+
+                        <p class="font-normal dark:text-white text-xl leading-5 text-gray-800 md:mt-6 mt-4">Flared
+                            Cotton Tank Top</p>
+                        <p class="font-semibold dark:text-gray-300 text-xl leading-5 text-gray-800 mt-4">$1800</p>
+                    </div>
+                </div>
+
+                <div class="flex justify-center items-center">
+                    <button
+                        class="hover:bg-gray-700 dark:text-gray-300 focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 bg-gray-800 py-5 md:px-16 md:w-auto w-full lg:mt-28 md:mt-12 mt-10 text-white font-medium text-base leading-4">Load
+                        More</button>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+
+    <!-- <header class="header">
         <h1>Product Catalog</h1>
     </header>
     <div class="content">
@@ -163,10 +400,7 @@
                 <button>ADD TO CART</button>
             </div>
         </div>
-    </div>
-    <footer>
-        ${_footer}
-    </footer>
-</body>
+    </div> -->
+    ${_footer}
 
 </html>

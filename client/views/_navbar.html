@@ -1,12 +1,12 @@
 <div class="relative">
     <div class="top-0 left-0 right-0 font-bold p-4 w-full">
     </div>
-    <div class="font-Fauna-one top-0 left-0 right-0 font-bold p-4 bg-[#e9e9f7]/70 backdrop-filter backdrop-blur fixed w-full z-10 shadow-md"
+    <div class="font-Fauna-one top-0 left-0 right-0 font-bold p-4 bg-white/70 backdrop-filter backdrop-blur fixed w-full z-10 shadow-md"
         x-data="{ isOpen: false}">
         <div class=" flex items-center justify-between space-x-4 lg:space-x-10">
             <div class="flex lg:w-0 lg:flex-1">
                 <div class="tracking-widest uppercase px-3 py-1 text-lg font-medium font-Cinzel ">
-                    REVEUX™
+                    <a href="/">REVEUX™</a>
                 </div>
             </div>
 
@@ -22,10 +22,8 @@
             </nav>
 
             <div class="items-center justify-end flex-1 hidden space-x-4 sm:flex">
-                <a class="px-5 py-2 text-sm font-medium text-gray-500 bg-gray-100 rounded-lg" href="/login"> Log in </a>
-
-                <a class="px-5 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg" href="/register"> Sign up
-                </a>
+                <a class="px-5 py-2 text-sm font-medium secondary-btn" href="/register"> Sign up</a>
+                <a class="px-5 py-2 text-sm font-medium primary-btn" href="/login"> Log in </a>
             </div>
 
             <div class="lg:hidden" @click="isOpen = !isOpen">
@@ -85,7 +83,7 @@
                         class="block w-full px-5 py-3 text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100">
                         Log in
                     </a>
-                    <a href="/login"
+                    <a href="/register"
                         class="block w-full px-5 py-3 text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100">
                         Sign up
                     </a>
