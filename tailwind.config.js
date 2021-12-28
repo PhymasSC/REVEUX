@@ -1,9 +1,6 @@
 module.exports = {
 	content: ["./client/views/**/*.{html,js}"],
-	plugins: [
-		require("@themesberg/flowbite/plugin"),
-		require("tailwind-scrollbar")
-	],
+	plugins: [require("tailwind-scrollbar")],
 	variants: {
 		scrollbar: ["rounded"]
 	},
@@ -13,7 +10,6 @@ module.exports = {
 				sans: ["ui-sans-serif", "system-ui"],
 				serif: ["ui-serif", "Georgia"],
 				mono: ["ui-monospace", "SFMono-Regular"],
-				display: ["mulish"],
 				mulish: ["mulish", "sans-serif"],
 				Cinzel: ["cinzel", "sans-serif"]
 			},
@@ -22,9 +18,6 @@ module.exports = {
 				cover: "cover",
 				contain: "contain",
 				"300%": "300%"
-			},
-			animation: {
-				"ltr-linear-infinite": "move-bg 5s alternate infinite"
 			},
 			// Define keyframes
 			keyframes: {

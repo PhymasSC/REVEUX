@@ -4,13 +4,16 @@
 
 @layer base {
     ::-webkit-scrollbar-thumb {
-        background-color: #bc7d1b;
-        box-shadow: inset 0 0 6em  #bc7d10;
+        background-color: #f3c472;
+        box-shadow: inset 0 0 6em  #f3c472;
         border-radius: 3em;
+    }
+    html{
+        scroll-behavior: smooth;
     }
 
     body {
-        @apply theme  font-mulish
+        @apply theme font-mulish
     }
 }
 
@@ -25,10 +28,10 @@
         @apply block text-sm font-medium
     }
     .checkbox {
-        @apply w-4 h-4 text-blue-600 border-gray-200 rounded focus:ring-blue-500 text-sm mr-2
+        @apply w-4 h-4 text-teal-600 border-gray-200 rounded focus:ring-teal-500 text-sm mr-2
     }
     .primary-btn {
-        @apply px-10 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-[#182A6A] rounded-xl hover:bg-[#0e193e] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500
+        @apply px-5 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-[#182A6A] rounded-xl hover:bg-[#0e193e] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500
     }
     .secondary-btn {
         @apply text-[#182A6A] transition duration-500 ease-in-out transform border-2 border-white  rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 bg-white/70 hover:bg-white/50

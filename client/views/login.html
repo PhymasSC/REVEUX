@@ -35,6 +35,7 @@
 </head>
 
 <body>
+
     ${_navBar}
     <div id="canvas-wrapper" class="flex min-h-screen overflow-hidden container px-5 py-24 mx-auto lg:px-16">
         <div class="flex flex-col justify-center flex-1 px-4 pb-6 sm:px-6 lg:flex-none lg:px-20 lg:py-12 xl:px-24">
@@ -51,24 +52,40 @@
                             <span>Email
                                 address</span>
                         </label>
-                        <div class="mt-1">
+                        <div class="mt-1 flex bg-gray-50 rounded-lg">
                             <input id="email" name="email" type="email" autocomplete="email" required=""
                                 placeholder="Your Email" class="input-field">
+                            <svg class="h-6 w-6 mr-4 my-auto text-gray-300" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207">
+                                </path>
+                            </svg>
                         </div>
                     </div>
                     <div class="space-y-1">
                         <label for="password" class="label-input-field">
                             <span>Password</span>
                         </label>
-                        <div class="mt-1">
+                        <div class="mt-1 flex bg-gray-50 rounded-lg">
                             <input id="password" name="password" type="password" autocomplete="current-password"
                                 required="" placeholder="Your Password" class="input-field">
+                            <button>
+                                <svg class="h-6 w-6 mr-4 my-auto text-gray-300" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+                                    </path>
+                                </svg>
+                            </button>
                         </div>
                     </div>
                     <div class="flex items-center justify-between">
                         <div class="flex items-center">
-                            <input id="remember-me" name="remember-me" type="checkbox" placeholder="Your password"
-                                class="checkbox">
+                            <input  id="remember-me" name="remember-me" type="checkbox"
+                                placeholder="Your password" class="checkbox">
                             Remember me
                         </div>
 
@@ -80,7 +97,7 @@
                     </div>
                     <div>
                         <button class="flex items-center justify-center w-full primary-btn" type="submit">
-                            Sign 
+                            Sign in
                         </button>
                     </div>
                 </form>
@@ -129,7 +146,7 @@
         <div class="relative flex-1 hidden w-0 overflow-hidden lg:block rounded-lg">
             <img class="inset-0 object-cover object-top w-full h-full"
                 src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&q=80"
-                alt="Serum Banner" draggable="false">
+                alt="Serum Banner" draggable="false" loading="lazy">
         </div>
     </div>
 
