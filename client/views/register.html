@@ -30,8 +30,10 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js" defer></script>
+    <script src="/src/validation.js"></script>
 </head>
 
 <body>
@@ -49,35 +51,36 @@
                     <h2 class="mt-6 text-3xl font-extrabold text-neutral-600">
                         <span class="">Sign up.</span>
                     </h2>
-                    <form action="#" method="POST" class="mt-8 space-y-6">
+                    <form action="#" method="POST" class="mt-8 space-y-6"
+                        x-data="{first: '', last: '', email: '', password: '', confirmation_password: ''}">
                         <div class="flex flex-wrap">
                             <div class="w-full lg:w-1/2 lg:pr-2">
                                 <label for="first_name" class="label-input-field">
-                                    <span>First name</span>
+                                    <span class="after:content-['*'] after:ml-0.5 after:text-red-500">First name</span>
                                 </label>
                                 <div class="mt-1">
-                                    <input id="email" name="email" type="email" autocomplete="email" required=""
-                                        placeholder="Your first name" class="input-field">
+                                    <input id="first" name="first" type="text" required placeholder="Your first name"
+                                        class="input-field" x-model="first">
                                 </div>
                             </div>
                             <div class="w-full mt-6 lg:w-1/2 lg:pl-2 lg:mt-0">
                                 <label for="second_name" class="label-input-field">
-                                    <span>Last name</span>
+                                    <span class="after:content-['*'] after:ml-0.5 after:text-red-500">Last name</span>
                                 </label>
                                 <div class="mt-1">
-                                    <input id="email" name="email" type="email" autocomplete="email" required=""
-                                        placeholder="Your last name" class="input-field">
+                                    <input id="last" name="last" type="text" required placeholder="Your last name"
+                                        class="input-field" x-model="last">
                                 </div>
                             </div>
                         </div>
                         <div class="">
                             <label for="email" class="label-input-field">
-                                <span>Email
+                                <span class="after:content-['*'] after:ml-0.5 after:text-red-500">Email
                                     address</span>
                             </label>
                             <div class="mt-1 flex bg-gray-50 rounded-lg">
-                                <input id="email" name="email" type="email" autocomplete="email" required=""
-                                    placeholder="Your Email" class="input-field">
+                                <input id="email" name="email" type="email" autocomplete="email" required
+                                    placeholder="Your Email" class="input-field" x-model="email">
                                 <svg class="h-6 w-6 mr-4 my-auto text-gray-300" xmlns="http://www.w3.org/2000/svg"
                                     fill="none" viewbox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -88,11 +91,11 @@
                         </div>
                         <div class="space-y-1">
                             <label for="password" class="label-input-field">
-                                <span>Password</span>
+                                <span class="after:content-['*'] after:ml-0.5 after:text-red-500">Password</span>
                             </label>
                             <div class="mt-1 flex bg-gray-50 rounded-lg">
                                 <input id="password" name="password" type="password" autocomplete="current-password"
-                                    required="" placeholder="Your Password" class="input-field">
+                                    required placeholder="Your Password" class="input-field" x-model="password">
                                 <button>
                                     <svg class="h-6 w-6 mr-4 my-auto text-gray-300" xmlns="http://www.w3.org/2000/svg"
                                         fill="none" viewbox="0 0 24 24" stroke="currentColor">
@@ -103,6 +106,121 @@
                                         </path>
                                     </svg>
                                 </button>
+                            </div>
+                        </div>
+                        <div class="space-y-1">
+                            <label for="password" class="label-input-field">
+                                <span class="after:content-['*'] after:ml-0.5 after:text-red-500">Confirmation
+                                    Password</span>
+                            </label>
+                            <div class="mt-1 flex bg-gray-50 rounded-lg">
+                                <input id="password" name="password" type="password" autocomplete="current-password"
+                                    required placeholder="Your Password" class="input-field"
+                                    x-model="confirmation_password">
+                                <button>
+                                    <svg class="h-6 w-6 mr-4 my-auto text-gray-300" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+                                        </path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-start">
+                            <div class="flex py-1">
+                                <div :class="{'text-green-600': first != null && first.length >= 3,  'text-red-600': first == null || first == ''}"
+                                    class=" rounded-full p-1 fill-current">
+                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path x-show="first.length >= 3" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="M5 13l4 4L19 7" />
+                                        <path x-show="first.length < 3" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+
+                                    </svg>
+                                </div>
+                                <div>
+                                    <span
+                                        :class="{'text-green-600': first != null && first.length >= 3,  'text-red-600': first == null || first == ''}"
+                                        class="font-medium text-sm"
+                                        x-text="first.length >= 3 ? 'The first name is validated' : 'At least 3 characters required'"></span>
+                                </div>
+                            </div>
+                            <div class="flex py-1">
+                                <div :class="{'text-green-600': last != null && last.length >= 3,  'text-red-600': last == null || last == ''}"
+                                    class=" rounded-full p-1 fill-current">
+                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path x-show="last.length >= 3" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="M5 13l4 4L19 7" />
+                                        <path x-show="last.length < 3" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+
+                                    </svg>
+                                </div>
+                                <div>
+                                    <span
+                                        :class="{'text-green-600': last != null && last.length >= 3,  'text-red-600': last == null || last == ''}"
+                                        class="font-medium text-sm"
+                                        x-text="last.length >= 3 ? 'The last name is validated' : 'At least 3 characters required'"></span>
+                                </div>
+                            </div>
+                            <!-- <div class="flex py-1">
+                                <div :class="{'text-green-600': first != null && first.length >= 3,  'text-red-600': first == null || first == ''}"
+                                    class=" rounded-full p-1 fill-current">
+                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path x-show="first.length >= 3" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="M5 13l4 4L19 7" />
+                                        <path x-show="first.length < 3" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+
+                                    </svg>
+                                </div>
+                                <div>
+                                    <span
+                                        :class="{'text-green-600': first != null && first.length >= 3,  'text-red-600': first == null || first == ''}"
+                                        class="font-medium text-sm"
+                                        x-text="first.length >= 3 ? 'The first name is validated' : 'At least 3 characters required'"></span>
+                                </div>
+                            </div> -->
+                            <div class="flex py-1">
+                                <div :class="{'text-green-600': password.length >= 7,  'text-red-600': password.length < 7}"
+                                    class=" rounded-full p-1 fill-current">
+                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path x-show="password.length >= 7" stroke-linecap="round"
+                                            stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                        <path x-show="password.length < 7" stroke-linecap="round"
+                                            stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+
+                                    </svg>
+                                </div>
+                                <div>
+                                    <span
+                                        :class="{'text-green-600': password.length >= 7,  'text-red-600': password.length < 7}"
+                                        class="font-medium text-sm"
+                                        x-text="password.length >= 7 ? 'The password is validated' : 'At least 1 uppercase, 1 lowercase, 1 numeric and 1 special characters are required'"></span>
+                                </div>
+                            </div>
+                            <div class="flex py-1">
+                                <div :class="{'text-green-600':  password == confirmation_password && password.length > 0,  'text-red-600':  password != confirmation_password || password.length == 0}"
+                                    class=" rounded-full p-1 fill-current">
+                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path x-show="password == confirmation_password && password.length > 0"
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7" />
+                                        <path x-show="password != confirmation_password || password.length == 0"
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M6 18L18 6M6 6l12 12" />
+
+                                    </svg>
+                                </div>
+                                <div>
+                                    <span
+                                        :class="{'text-green-600':  password == confirmation_password && password.length > 0,  'text-red-600':  password != confirmation_password || password.length == 0}"
+                                        class="font-medium text-sm"
+                                        x-text="password == confirmation_password && password.length ? 'The passwords are matched' : 'The passwords do not match'"></span>
+                                </div>
                             </div>
                         </div>
                         <div>
