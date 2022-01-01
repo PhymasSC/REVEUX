@@ -4,12 +4,13 @@
 
 @layer base {
     ::-webkit-scrollbar-thumb {
-        background-color: #f3c472;
-        box-shadow: inset 0 0 6em  #f3c472;
+        background-color: hsl(227,63%,25%);
+        box-shadow: inset 0 0 6em hsl(227,63%,25%);
         border-radius: 3em;
     }
     html{
         scroll-behavior: smooth;
+        @apply selection:bg-sky-300 selection:text-sky-900
     }
 
     body {
@@ -19,7 +20,12 @@
 
 @layer components {
     .theme {
-        @apply text-[#182A6A] bg-gradient-to-b from-[#fdf5e7] to-[#fbebd0] h-full w-full scrollbar-thin overflow-y-scroll 
+        @apply text-[hsl(227,63%,25%)] bg-gradient-to-b from-[#E3F0FF] to-[#fafcff] h-full w-full scrollbar-thin overflow-y-scroll 
+        /* @apply text-[#182A6A] bg-gradient-to-b from-[#fdf5e7] to-[#fbebd0] h-full w-full scrollbar-thin overflow-y-scroll  */
+    }
+
+    .hero-card {
+        @apply mt-20 rounded-xl relative overflow-hidden bg-white/70 flex sm:my-20 sm:flex-row flex-col justify-between mx-10 smooth-shadow-light
     }
     .input-field {
         @apply block w-full px-5 py-3 text-base placeholder-gray-300 transition duration-500 ease-in-out transform border border-transparent bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300 rounded-lg 
@@ -28,7 +34,7 @@
         @apply block text-sm font-medium
     }
     .checkbox {
-        @apply w-4 h-4 text-teal-600 border-gray-200 rounded focus:ring-teal-500 text-sm mr-2
+        @apply w-4 h-4 text-sky-600 border-gray-200 rounded focus:ring-sky-500 text-sm mr-2
     }
     .primary-btn {
         @apply px-5 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-[#182A6A] rounded-xl hover:bg-[#0e193e] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500
@@ -39,12 +45,12 @@
 
     .smooth-shadow-light{
         box-shadow:
-            0px 1.7px 2.2px hsl(38deg 97% 46% / 2%), 
-            0px 4px 5.3px hsl(38deg 97% 46% / 3%), 
-            0px 7.5px 10px hsl(38deg 97% 46% / 4%), 
-            0px 13.4px 17.9px hsl(38deg 97% 46% / 4%), 
-            0px 25.1px 33.4px hsl(38deg 97% 46% / 5%), 
-            0px 60px 80px hsl(38deg 97% 46% / 7%)
+            0px 1.7px 2.2px hsl(216 100% 46% / 2%), 
+            0px 4px 5.3px hsl(216 100% 46% / 3%), 
+            0px 7.5px 10px hsl(216 100% 46% / 4%), 
+            0px 13.4px 17.9px hsl(216 100% 46%/ 4%), 
+            0px 25.1px 33.4px hsl(216 100% 46% / 5%), 
+            0px 60px 80px hsl(216 100% 46% / 7%)
     }
     
 
