@@ -52,7 +52,7 @@
                         <span class="">Sign up.</span>
                     </h2>
                     <form action="#" method="POST" class="mt-8 space-y-6"
-                        x-data="{first: '', last: '', email: '', password: '', confirmation_password: ''}">
+                        x-data="{first: '', last: '', email: '', password: '', confirmation_password: '', isReveal: false, isConfirmReveal: false}">
                         <div class="flex flex-wrap">
                             <div class="w-full lg:w-1/2 lg:pr-2 ">
                                 <label for="first_name" class="label-input-field">
@@ -94,9 +94,11 @@
                                 <span class="after:content-['*'] after:ml-0.5 after:text-red-500">Password</span>
                             </label>
                             <div class="mt-1 flex bg-gray-50 rounded-lg">
-                                <input id="password" name="password" type="password" autocomplete="current-password"
-                                    required placeholder="Your Password" class="input-field" x-model="password">
-                                <svg class="h-6 w-6 mr-4 my-auto text-gray-300 cursor-pointer"
+                                <input id="password" name="password" :type="isReveal ? 'text' : 'password'"
+                                    autocomplete="current-password" required placeholder="Your Password"
+                                    class="input-field" x-model="password">
+                                <svg @mousedown="isReveal = true" @mouseup="isReveal = false"
+                                    class="h-6 w-6 mr-4 my-auto cursor-pointer text-gray-300 hover:text-gray-500"
                                     xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24"
                                     stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -113,19 +115,19 @@
                                     Password</span>
                             </label>
                             <div class="mt-1 flex bg-gray-50 rounded-lg">
-                                <input id="repassword" name="password" type="password" autocomplete="current-password"
-                                    required placeholder="Your Password" class="input-field"
-                                    x-model="confirmation_password">
-                                <button>
-                                    <svg class="h-6 w-6 mr-4 my-auto text-gray-300" xmlns="http://www.w3.org/2000/svg"
-                                        fill="none" viewbox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
-                                        </path>
-                                    </svg>
-                                </button>
+                                <input id="repassword" name="password" :type="isConfirmReveal ? 'text' : 'password'"
+                                    autocomplete="current-password" required placeholder="Your Password"
+                                    class="input-field" x-model="confirmation_password">
+                                <svg @mousedown="isConfirmReveal = true" @mouseup="isConfirmReveal = false"
+                                    class="h-6 w-6 mr-4 my-auto cursor-pointer text-gray-300 hover:text-gray-500"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+                                    </path>
+                                </svg>
                             </div>
                         </div>
                         <div class="flex flex-col items-start">

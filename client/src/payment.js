@@ -1,4 +1,7 @@
 const button = document.querySelector("#pay");
+console.log(button);
+const btn = document.getElementById("pay");
+console.log(btn);
 const request = {
 	method: "POST",
 	headers: {

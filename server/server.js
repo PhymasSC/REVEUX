@@ -11,7 +11,7 @@ const productModel = require("./models/products.js");
 const productRouter = require("./routes/product.js");
 const productsRouter = require("./routes/products.js");
 const checkoutRouter = require("./routes/checkout.js");
-
+const contactRouter = require("./routes/contact.js");
 const port = process.env.PORT || 5000;
 
 mongoose.connect(process.env.DB_URL, {
@@ -31,6 +31,8 @@ productModel.find().then(data => console.log(data));
 app.engine("html", es6Renderer);
 app.set("views", "client/views");
 app.set("view engine", "html");
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 app.use(express.static(__dirname + "/../client"));
 
 const isFileExist = fname =>
@@ -48,6 +50,7 @@ app.get("/", (req, res) => {
 app.use("/checkout", checkoutRouter);
 app.use("/product", productRouter);
 app.use("/products", productsRouter);
+app.use("/contact", contactRouter);
 
 app.get("/:filename", (req, res) => {
 	try {
@@ -70,11 +73,6 @@ app.get("/:filename", (req, res) => {
 	} catch (e) {
 		console.error(e);
 	}
-});
-
-
-app.get("/", (req, res) => {
-	res.render("products", {products: "hello world"})
 });
 
 app.listen(port);

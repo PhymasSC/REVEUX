@@ -53,14 +53,14 @@
                             </div>
                             <div class="mb-10 leading-relaxed">
                                 <h4 class="text-sm text-gray-400">E-mail</h4>
-                                <p>info@metis.com</p>
+                                <p>donotreply.reveux@gmail.com</p>
                             </div>
                         </div>
                     </div>
                     <div class="w-full lg:w-1/2 px-3">
-                        <form>
+                        <form action="/contact" method="post">
                             <div class="mb-4 text-sm">
-                                <span class="mr-4 font-semibold">Departament:</span>
+                                <span class="mr-4 font-semibold">Department:</span>
                                 <label class="mr-4">
                                     <input class="mr-1" type="radio" name="department" value="1" checked="">
                                     <span>Support</span>
@@ -74,34 +74,27 @@
                                 <label for="subject" class="label-input-field">
                                     <span>Subject</span>
                                 </label>
-                                <input class="input-field" type="text" placeholder="Subject">
+                                <input name="subject" class="input-field" type="text" placeholder="Subject">
                             </div>
                             <div class="mb-4">
                                 <label for="name" class="label-input-field">
                                     <span>Full name</span>
                                 </label>
-                                <input class="input-field" type="text" placeholder="Name">
+                                <input name="name" class="input-field" type="text" placeholder="Name">
                             </div>
                             <div class="mb-4">
                                 <label for="email" class="label-input-field">
                                     <span>Email
                                         address</span>
                                 </label>
-                                <input class="input-field" type="email" placeholder="Your Email">
+                                <input name="email" class="input-field" type="email" placeholder="Your Email">
                             </div>
                             <div class="mb-4">
                                 <label for="text" class="label-input-field">
                                     <span>Message</span>
                                 </label>
-                                <textarea class="input-field min-h-[10rem] max-h-[20rem]" type="text"
+                                <textarea name="message" class="input-field min-h-[10rem] max-h-[20rem]" type="text"
                                     placeholder="Message..."></textarea>
-                            </div>
-                            <div class="mb-4">
-                                <label class="flex px-2 rounded bg-white/30 cursor-pointer">
-                                    <input class="hidden" type="file" placeholder="Choose file.." name="Choose file">
-                                    <div class="my-1 px-4 py-3 text-xs font-semibold">
-                                        Browse files</div>
-                                </label>
                             </div>
                             <div class="flex justify-between items-center">
                                 <label>
