@@ -2,6 +2,10 @@ const Feedback = require("./../models/feedback");
 const express = require("express");
 const router = express.Router();
 
+router.get("/", (req, res) => {
+	console.log(feedback);
+});
+
 router.post("/", async (req, res) => {
 	if (!req.body.terms) return;
 	const feedback = new Feedback({

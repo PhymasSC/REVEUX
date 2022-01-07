@@ -9,9 +9,9 @@ const productModel = require("./models/products.js");
 
 // routers
 const productRouter = require("./routes/product.js");
-const productsRouter = require("./routes/products.js");
 const checkoutRouter = require("./routes/checkout.js");
 const contactRouter = require("./routes/contact.js");
+const catalogRouter = require("./routes/catalog.js");
 const port = process.env.PORT || 5000;
 
 mongoose.connect(process.env.DB_URL, {
@@ -49,7 +49,7 @@ app.get("/", (req, res) => {
 // Establish routers
 app.use("/checkout", checkoutRouter);
 app.use("/product", productRouter);
-app.use("/products", productsRouter);
+app.use("/catalog", catalogRouter);
 app.use("/contact", contactRouter);
 
 app.get("/:filename", (req, res) => {
