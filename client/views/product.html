@@ -123,9 +123,11 @@
                 ${Object.keys(product.description).map( key => `
                     <div>${key}</div>
                     <div>${product?.description[key]}</div>
-                `).join(" ")}
+                `).join(" ")} 
+                <!-- 然后这整段其实都是 javascript 这种做法的话就不需要template -->
             </div>
         </div>
+        ${console.log(product)}
     </section>
 
     ${_footer}

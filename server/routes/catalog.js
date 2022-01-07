@@ -1,11 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const categories = [
-	"hair-care",
-	"skin-care",
-	"body-care",
-	"make-up",
-	"fragrance"
+	"Hair-Care",
+	"skin-Care",
+	"Body-Care",
+	"Make-up",
+	"Fragrance"
 ];
 
 categories.forEach(category => {

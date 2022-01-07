@@ -50,13 +50,14 @@ function removeItem(e) {
 }
 
 function updateCartSubtotal() {
-    let cartRows = document.querySelectorAll("#cart>*");
+    let cartRows = document.querySelectorAll("#cart");
     console.log(cartRows)
     let subtotal = 0;
     let total = 0;
     for(let i = 0; i < cartRows.length; i++) {
         let row = cartRows[i];
         let itemPrice = row.getElementById("itemPrice");
+        console.log(itemPrice);
         let price = parseFloat(itemPrice.getElementById("price").innerText.replace("RM", ""));
         console.log(price)
         let quantity = parseInt(document.getElementById("number").innerText);
