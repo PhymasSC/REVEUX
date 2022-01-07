@@ -4,6 +4,7 @@
   "description": "Web design assignment for subject CSF3206.",
   "main": "server/server.js",
   "scripts": {
+    "start": "node server/server.js",
     "startServer": "nodemon server/server.js",
     "build:tailwind": "tailwindcss -i client/views/input.css -o client/src/output.css --watch",
     "nodemon:tailwind": "nodemon --exec npm run build:tailwind",
