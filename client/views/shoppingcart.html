@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fauna+One&display=swap">
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js" defer></script>
+    <script src="/src/cart.js" defer></script>
 </head>
 
 
@@ -52,36 +53,40 @@
                             <div class="w-full lg:w-1/6 text-center">
                                 <h4 class="mb-6 font-bold font-heading text-gray-500">Quantity</h4>
                             </div>
-                            <div class="w-full lg:w-1/6 text-right">
+                            <!-- <div class="w-full lg:w-1/6 text-right">
                                 <h4 class="mb-6 font-bold font-heading text-gray-500">Subtotal</h4>
-                            </div>
+                            </div> -->
                         </div>
-                        <div class="mb-12 py-6 border-t border-b border-gray-200">
+                        <div class="mb-12 py-6 border-t border-b border-gray-200" id="cart">
                             <div class="flex flex-wrap items-center -mx-4 mb-6 md:mb-3">
                                 <div class="w-full md:w-4/6 lg:w-6/12 px-4 mb-6 md:mb-0">
                                     <div class="flex -mx-4 flex-wrap items-center">
                                         <div class="w-full md:w-1/3 px-4 mb-3">
                                             <div
                                                 class="flex items-center justify-center w-full md:w-24 h-32 bg-gray-100">
-                                                <img class="h-full object-contain"
+                                                <img class="h-full object-contain" id="image"
                                                     src="yofte-assets/images/waterbottle.png" alt="">
                                             </div>
                                         </div>
                                         <div class="w-2/3 px-4">
-                                            <h3 class="mb-2 text-xl font-bold font-heading">BRILE water filter carafe
+                                            <h3 class="mb-2 text-xl font-bold font-heading">BRILE water filter
+                                                carafe
                                             </h3>
                                             <p class="text-gray-500">Maecenas 0.7 commodo sit</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="hidden lg:block lg:w-2/12 px-4">
-                                    <p class="text-lg text-blue-500 font-bold font-heading">$29.89</p>
-                                    <span class="text-xs text-gray-500 line-through">$33.69</span>
+                                <div class="hidden lg:block lg:w-2/12 px-4" id="itemPrice">
+                                    <div id="price">
+                                        <p class="text-lg text-blue-500 font-bold font-heading">RM29.89</p>
+                                    </div>
+                                    <span class="text-xs text-gray-500 line-through">RM33.69</span>
                                 </div>
                                 <div class="w-auto md:w-1/6 lg:w-2/12 px-4">
-                                    <div
-                                        class="inline-flex items-center px-4 font-semibold font-heading text-gray-500 border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md">
-                                        <button class="py-2 hover:text-gray-700">
+                                    <div class="inline-flex items-center px-4 font-semibold font-heading text-gray-500 border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md"
+                                        x-data="{count: 1}">
+                                        <button class="py-2 hover:text-gray-700" type="button"
+                                            @click="if(count<=1) return; count--">
                                             <svg width="12" height="2" viewbox="0 0 12 2" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <g opacity="0.35">
@@ -90,10 +95,11 @@
                                                 </g>
                                             </svg>
                                         </button>
-                                        <input
-                                            class="w-12 m-0 px-2 py-4 text-center md:text-right border-0 focus:ring-transparent focus:outline-none rounded-md"
-                                            type="number" placeholder="1">
-                                        <button class="py-2 hover:text-gray-700">
+                                        <div
+                                            class="w-12 m-0 px-2 py-4 text-center border-0 focus:ring-transparent focus:outline-none rounded-md">
+                                            <span x-text="count"></span>
+                                        </div>
+                                        <button class="py-2 hover:text-gray-700" type="button" @click="count++">
                                             <svg width="12" height="12" viewbox="0 0 12 12" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <g opacity="0.35">
@@ -106,9 +112,11 @@
                                     </div>
                                 </div>
                                 <div class="w-auto md:w-1/6 lg:w-2/12 px-4 text-right">
-                                    <p class="text-lg text-blue-500 font-bold font-heading">$29.89</p>
+                                    <!-- <p class="text-lg text-blue-500 font-bold font-heading itm-sub-total-price">$29.89</p> -->
+                                    <button class="bg-red-400 p-3 rounded-md text-white" type="button"
+                                        id="btn-remove-item">Remove</button>
                                 </div>
-                            </div>
+                            </div> 
                             <div class="flex flex-wrap items-center -mx-4">
                                 <div class="w-full md:w-4/6 lg:w-6/12 px-4 mb-6 md:mb-0">
                                     <div class="flex -mx-4 flex-wrap items-center">
@@ -125,14 +133,14 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="hidden lg:block lg:w-2/12 px-4">
-                                    <p class="text-lg text-blue-500 font-bold font-heading">$29.89</p>
-                                    <span class="text-xs text-gray-500 line-through">$33.69</span>
+                                <div class="hidden lg:block lg:w-2/12 px-4" id="itemPrice">
+                                    <p class="text-lg text-blue-500 font-bold font-heading" id="price">RM29.89</p>
+                                    <span class="text-xs text-gray-500 line-through">RM33.69</span>
                                 </div>
                                 <div class="w-auto md:w-1/6 lg:w-2/12 px-4">
-                                    <div
-                                        class="inline-flex items-center px-4 font-semibold font-heading text-gray-500 border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md">
-                                        <button class="py-2 hover:text-gray-700">
+                                    <div class="inline-flex items-center px-4 font-semibold font-heading text-gray-500 border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md"
+                                        x-data="{count: 1}">
+                                        <button class="py-2 hover:text-gray-700" @click="if(count<=1) return; count--">
                                             <svg width="12" height="2" viewbox="0 0 12 2" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <g opacity="0.35">
@@ -141,10 +149,11 @@
                                                 </g>
                                             </svg>
                                         </button>
-                                        <input
-                                            class="w-12 m-0 px-2 py-4 text-center md:text-right border-0 focus:ring-transparent focus:outline-none rounded-md"
-                                            type="number" placeholder="1">
-                                        <button class="py-2 hover:text-gray-700">
+                                        <div
+                                            class="w-12 m-0 px-2 py-4 text-center border-0 focus:ring-transparent focus:outline-none rounded-md">
+                                            <span x-text="count"></span>
+                                        </div>
+                                        <button class="py-2 hover:text-gray-700" @click="count++">
                                             <svg width="12" height="12" viewbox="0 0 12 12" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <g opacity="0.35">
@@ -157,9 +166,11 @@
                                     </div>
                                 </div>
                                 <div class="w-auto md:w-1/6 lg:w-2/12 px-4 text-right">
-                                    <p class="text-lg text-blue-500 font-bold font-heading">$29.89</p>
+                                    <!-- <p class="text-lg text-blue-500 font-bold font-heading itm-sub-total-price">$29.89</p> -->
+                                    <button class="bg-red-400 p-3 rounded-md text-white" type="button"
+                                        id="btn-remove-item">Remove</button>
                                 </div>
-                            </div>
+                            </div> 
                         </div>
                         <div class="flex flex-wrap items-center lg:-mb-4">
                             <span class="mr-12 mb-4 font-medium">Apply discount code:</span>
@@ -171,24 +182,26 @@
                         </div>
                     </div>
                     <div class="w-full xl:w-4/12 px-4">
-                        <div class="p-6 md:p-12 bg-blue-300">
+                        <div class="p-6 md:p-12 bg-blue-300 rounded-lg" id="calAmount">
                             <h2 class="mb-6 text-4xl font-bold font-heading text-white">Cart totals</h2>
-                            <div class="flex mb-8 items-center justify-between pb-5 border-b border-blue-100">
+                            <div class="flex mb-8 items-center justify-between pb-5 border-b border-blue-100 subtotal"
+                                id="sub">
                                 <span class="text-blue-50">Subtotal</span>
-                                <span class="text-xl font-bold font-heading text-white">$89.67</span>
+                                <span class="text-xl font-bold font-heading text-white subtotal-price"
+                                    id="subtotal">RM89.67</span>
                             </div>
                             <h4 class="mb-2 text-xl font-bold font-heading text-white">Shipping</h4>
                             <div class="flex mb-2 justify-between items-center">
                                 <span class="text-blue-50">Next day</span>
-                                <span class="text-xl font-bold font-heading text-white">$11.00</span>
-                            </div>
-                            <div class="flex mb-10 justify-between items-center">
+                                <span class="text-xl font-bold font-heading text-white" id="shipFee">RM11.00</span>
+                            </div><br>
+                            <!-- <div class="flex mb-10 justify-between items-center">
                                 <span class="text-blue-50">Shipping to United States</span>
                                 <span class="text-xl font-bold font-heading text-white">-</span>
-                            </div>
-                            <div class="flex mb-10 justify-between items-center">
+                            </div> -->
+                            <div class="flex mb-10 justify-between items-center total">
                                 <span class="text-xl font-bold font-heading text-white">Order total</span>
-                                <span class="text-xl font-bold font-heading text-white">$100.67</span>
+                                <span class="text-xl font-bold font-heading text-white" id="total">RM100.67</span>
                             </div>
                             <a class="block w-full py-4 bg-orange-300 hover:bg-orange-400 text-center text-white font-bold font-heading uppercase rounded-md transition duration-200"
                                 href="#">Go to Checkout</a>
