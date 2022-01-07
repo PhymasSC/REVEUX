@@ -51,7 +51,7 @@
                     <h2 class="mt-6 text-3xl font-extrabold text-neutral-600">
                         <span class="">Sign up.</span>
                     </h2>
-                    <form action="#" method="POST" class="mt-8 space-y-6"
+                    <form action="register" method="POST" class="mt-8 space-y-6"
                         x-data="{first: '', last: '', email: '', password: '', confirmation_password: '', isReveal: false, isConfirmReveal: false}">
                         <div class="flex flex-wrap">
                             <div class="w-full lg:w-1/2 lg:pr-2 ">
@@ -59,7 +59,7 @@
                                     <span class="after:content-['*'] after:ml-0.5 after:text-red-500">First name</span>
                                 </label>
                                 <div class="mt-1">
-                                    <input id="firstName" name="first" type="text" required
+                                    <input id="firstName" name="firstName" type="text" required
                                         placeholder="Your first name" class="input-field" x-model="first">
                                 </div>
                             </div>
@@ -68,7 +68,7 @@
                                     <span class="after:content-['*'] after:ml-0.5 after:text-red-500">Last name</span>
                                 </label>
                                 <div class="mt-1">
-                                    <input id="lastName" name="last" type="text" required placeholder="Your last name"
+                                    <input id="lastName" name="lastName" type="text" required placeholder="Your last name"
                                         class="input-field" x-model="last">
                                 </div>
                             </div>

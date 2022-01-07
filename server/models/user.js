@@ -1,22 +1,16 @@
 const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
+const SALT_WORK_FACTOR = 10;
 
 let validateEmail = function (email) {
 	let re = /^[a-zA-Z0-9_.-]+@.+\.(com|my|sg|jp|id|th|vn|kr|hk|tw|mm)$/;
 	return re.test(email);
 };
 
-const feedbackSchema = new mongoose.Schema({
-	department: {
-		type: String,
-		required: "Department is required"
-	},
+const userSchema = new mongoose.Schema({
 	name: {
 		type: String,
 		required: true
-	},
-	subject: {
-		type: String,
-		required: "Subject is required"
 	},
 	email: {
 		type: String,
@@ -29,9 +23,9 @@ const feedbackSchema = new mongoose.Schema({
 			"Please fill in a valid email address"
 		]
 	},
-	message: {
+	password: {
 		type: String,
-		required: "Message is required."
+		required: true
 	},
 	createdAt: {
 		type: Date,
@@ -39,4 +33,17 @@ const feedbackSchema = new mongoose.Schema({
 	}
 });
 
-module.exports = mongoose.model("feedback", feedbackSchema);
+// Middleware
+userSchema.pre("save", async function (next) {
+	this.password = await bcrypt.hash(this.password, SALT_WORK_FACTOR);
+	next();
+});
+
+userSchema.methods.comparePassword = function (candidatePassword, callback) {
+	bcrypt.compare(candidatePassword, this.password, function (err, isMatch) {
+		if (err) return callback(err);
+		callback(null, isMatch);
+	});
+};
+
+module.exports = mongoose.model("User", userSchema);
