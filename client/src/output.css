@@ -1120,6 +1120,10 @@ body {
   margin-left: 0.5rem;
 }
 
+.mt-5 {
+  margin-top: 1.25rem;
+}
+
 .mr-12 {
   margin-right: 3rem;
 }
@@ -3238,14 +3242,6 @@ body {
 
   .lg\:pl-12 {
     padding-left: 3rem;
-  }
-
-  .lg\:pr-2 {
-    padding-right: 0.5rem;
-  }
-
-  .lg\:pl-2 {
-    padding-left: 0.5rem;
   }
 
   .lg\:pr-8 {

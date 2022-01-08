@@ -52,25 +52,14 @@
                         <span class="">Sign up.</span>
                     </h2>
                     <form action="register" method="POST" class="mt-8 space-y-6"
-                        x-data="{first: '', last: '', email: '', password: '', confirmation_password: '', isReveal: false, isConfirmReveal: false}">
-                        <div class="flex flex-wrap">
-                            <div class="w-full lg:w-1/2 lg:pr-2 ">
-                                <label for="first_name" class="label-input-field">
-                                    <span class="after:content-['*'] after:ml-0.5 after:text-red-500">First name</span>
-                                </label>
-                                <div class="mt-1">
-                                    <input id="firstName" name="firstName" type="text" required
-                                        placeholder="Your first name" class="input-field" x-model="first">
-                                </div>
-                            </div>
-                            <div class="w-full mt-6 lg:w-1/2 lg:pl-2 lg:mt-0">
-                                <label for="last_name" class="label-input-field">
-                                    <span class="after:content-['*'] after:ml-0.5 after:text-red-500">Last name</span>
-                                </label>
-                                <div class="mt-1">
-                                    <input id="lastName" name="lastName" type="text" required placeholder="Your last name"
-                                        class="input-field" x-model="last">
-                                </div>
+                        x-data="{username: '', email: '', password: '', confirmation_password: '', isReveal: false, isConfirmReveal: false}">
+                        <div class="w-full">
+                            <label for="username" class="label-input-field">
+                                <span class="after:content-['*'] after:ml-0.5 after:text-red-500">Username</span>
+                            </label>
+                            <div class="mt-1">
+                                <input id="username" name="username" type="text" required placeholder="Username"
+                                    class="input-field" x-model="username">
                             </div>
                         </div>
                         <div class="">
@@ -132,37 +121,19 @@
                         </div>
                         <div class="flex flex-col items-start">
                             <div class="flex py-1">
-                                <div :class="{'!text-green-600': first != null && first.length >= 3}"
+                                <div :class="{'!text-green-600': username != null && username.length >= 3}"
                                     class="text-red-600 rounded-full p-1 fill-current">
                                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path x-show="first.length >= 3" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="M5 13l4 4L19 7" />
-                                        <path x-show="first.length < 3" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-
+                                        <path x-show="username.length >= 3" stroke-linecap="round"
+                                            stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                        <path x-show="username.length < 3" stroke-linecap="round"
+                                            stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                                     </svg>
                                 </div>
                                 <div>
-                                    <span :class="{'!text-green-600': first != null && first.length >= 3}"
+                                    <span :class="{'!text-green-600': username != null && username.length >= 3}"
                                         class="text-red-600 font-medium text-sm"
-                                        x-text="first.length >= 3 ? 'The first name is validated' : 'At least 3 characters required first name'"></span>
-                                </div>
-                            </div>
-                            <div class="flex py-1">
-                                <div :class="{'!text-green-600': last != null && last.length >= 3}"
-                                    class="text-red-600 rounded-full p-1 fill-current">
-                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path x-show="last.length >= 3" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="M5 13l4 4L19 7" />
-                                        <path x-show="last.length < 3" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-
-                                    </svg>
-                                </div>
-                                <div>
-                                    <span :class="{'!text-green-600': last != null && last.length >= 3}"
-                                        class="text-red-600 font-medium text-sm"
-                                        x-text="last.length >= 3 ? 'The last name is validated' : 'At least 3 characters for last name'"></span>
+                                        x-text="username.length >= 3 ? 'The username is validated' : 'Username required at least 3 characters'"></span>
                                 </div>
                             </div>
                             <div class="flex py-1">
@@ -201,7 +172,7 @@
                                 <div>
                                     <span :class="{'!text-green-600': password.length >= 7}"
                                         class="text-red-600 font-medium text-sm"
-                                        x-text="password.length >= 7 ? 'The password is validated' : 'At least 7 characters, 1 uppercase, 1 lowercase, 1 numeric and 1 special characters are required'"></span>
+                                        x-text="password.length >= 7 ? 'The password is validated' : 'Password required at least 7 characters, 1 uppercase, 1 lowercase, 1 numeric and 1 special characters'"></span>
                                 </div>
                             </div>
                             <div class="flex py-1">
@@ -231,45 +202,7 @@
                             </button>
                         </div>
                     </form>
-                    <div class="relative my-4">
-                        <!-- <div class="absolute inset-0 flex items-center">
-                            <div class="w-full border-t border-gray-300">
-                            </div>
-                        </div> -->
-                        <div
-                            class="relative flex justify-center text-sm px-2 before:contents-[''] before:absolute before:border-b-2 before:border-gray-300 before:w-1/3 before:-translate-x-full before:translate-y-2 after:contents-[''] after:absolute after:border-b-2 after:border-gray-300 after:w-1/3 after:translate-x-full after:translate-y-2">
-                            Or sign up with
-                        </div>
-                    </div>
-                    <div class="flex flex-col items-center gap-5">
-                        <button
-                            class="w-full items-center block px-10 py-3.5 text-base font-medium text-center secondary-btn shadow-lg shadow-[hsl(216,100%,86%)]"
-                            type="submit">
-                            <div class="flex items-center justify-center">
-                                <svg class="mr-4 w-6" xmlns="http://www.w3.org/2000/svg"
-                                    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
-                                    <defs id="6b6cd211-fc50-417b-93fd-9ed3d7a06652">
-                                        <path id="a"
-                                            d="M44.5 20H24v8.5h11.8C34.7 33.9 30.1 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 4.1 29.6 2 24 2 11.8 2 2 11.8 2 24s9.8 22 22 22c11 0 21-8 21-22 0-1.3-.2-2.7-.5-4z">
-                                        </path>
-                                    </defs>
-                                    <clipPath id="b">
-                                        <use id="7697cec6-fa05-49e3-9d97-0df5ffbab7bc" xlink:href="#a"
-                                            overflow="visible">
-                                        </use>
-                                    </clipPath>
-                                    <path clip-path="url(#b)" fill="#FBBC05" d="M0 37V11l17 13z">
-                                    </path>
-                                    <path clip-path="url(#b)" fill="#EA4335" d="M0 11l17 13 7-6.1L48 14V0H0z">
-                                    </path>
-                                    <path clip-path="url(#b)" fill="#34A853" d="M0 37l30-23 7.9 1L48 0v48H0z">
-                                    </path>
-                                    <path clip-path="url(#b)" fill="#4285F4" d="M48 48L17 24l-4-3 35-10z">
-                                    </path>
-                                </svg>
-                                Google
-                            </div>
-                        </button>
+                    <div class="flex flex-col items-center gap-5 mt-5">
                         <span class="text-gray-400 text-xs">
                             <span>Already have an account?</span>
                             <a class="text-blue-600 hover:underline" href="/login">Sign In</a>
