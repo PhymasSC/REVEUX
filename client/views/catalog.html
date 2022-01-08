@@ -29,160 +29,52 @@
     <link rel="stylesheet" href="/src/output.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fauna+One&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js" defer></script>
-
-    <style>
-        img{
-            width: 100%;
-            display: block;
-        }
-        .container{
-            width: 88vw;
-            margin: 0 auto;
-        }
-        .products{
-            background: var(--alice-blue);
-            padding: 3.2rem 0;
-        }
-        .product{
-            margin: 2rem;
-            position: relative;
-        }
-        .product-content{
-            background: var(--gray);
-            padding: 3rem 0.5rem 2rem 0.5rem;
-            cursor: pointer;
-        }
-        .product-img{
-            background: var(--white-light);
-            box-shadow: 0 0 20px 10px var(--white-light);
-            width: 200px;
-            height: 200px;
-            margin: 0 auto;
-            border-radius: 50%;
-            transition: background 0.5s ease;
-        }
-        .product-name{
-            color: black;
-            display: block;
-            text-decoration: none;
-            font-size: 1rem;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-        /* Media Queries */
-        @media screen and (min-width: 992px){
-            .product-items{
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .product-col-r-bottom{
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        @media screen and (min-width: 1200px){
-            .product-items{
-                grid-template-columns: repeat(3, 1fr);
-            }
-            .product{
-                margin-right: 1rem;
-                margin-left: 1rem;
-            }
-            .products .text-light{
-                width: 50%;
-            }
-        }
-        @media screen and (min-width: 1336px){
-            .product-items{
-                grid-template-columns: repeat(4, 1fr);
-            }
-            .product-collection-wrapper{
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .product-col-left{
-                height: 121.5vh;
-            }
-        }
-    </style>
 </head>
 
-<body class="theme scrollbar-thumb-blue-500 scrollbar-track-blue-300">
-    <header class="header">
+<body>
+    <header>
         ${_navBar}
-        <div><h1>Product Catalog</h1>
-            <div class = "products">
-                <div class = "container">
-                <div class = "product-items">
-                    <!-- single product -->
-                    <div class = "product">
-                    <div class = "product-content">
-                    <div class = "product-img">
-                    <img src = "/img/products/skin-care/eye-cream/skincare-cream.png" alt="product image">
-                    </div>
-                    </div>
-                    <div class = "product-info">
-                    <div class = "product-info-top">
-                    </div>
-                    <a href = "#" class = "product-name">eyecream</a>
-                    </div>
-                    </div>
-                    <!-- end of single product -->
-                    <!-- single product -->
-                <div class = "product">
-                <div class = "product-content">
-                    <div class = "product-img">
-                    <img src = "/img/products/skin-care/mask/facial-mask-01.png" alt = "product image">
-                    </div>
-                    </div>
-                    <div class = "product-info">
-                    <div class = "product-info-top">
-                    </div>
-                    <a href = "#" class = "product-name">Facial Mask</a>
-                    </div>
-                    </div>
-                    <!-- end of single product -->
-                    <!-- single product -->
-                <div class = "product">
-                <div class = "product-content">
-                    <div class = "product-img">
-                    <img src = "client\img\products\skin-care\mask\gel-mask-01.png" alt = "product image">
-                    </div>
-                    </div>
-                    <div class = "product-info">
-                    <div class = "product-info-top">
-                    </div>
-                    <a href = "#" class = "product-name">Gel Mask</a>
-                    </div>
-                    </div>
-                    <!-- end of single product -->
-                    <!-- single product -->
-                <div class = "product">
-                <div class = "product-content">
-                    <div class = "product-img">
-                    <img src = "\img\products\skin-care\night-cream\skincare-cream-01.png" alt = "product image">
-                    </div>
-                    </div>
-                    <div class = "product-info">
-                    <div class = "product-info-top">
-                    </div>                        
-                    <a href = "#" class = "product-name">Night Cream</a>
-                    <div>
-                    </div>
-                    <!-- end of single product -->
-                    <!-- single product -->
-                </div>
-        
-
-
-
-
     </header>
-    
+    <div class="grid auto-cols-auto grid-cols-3 gap-5 mt-20 mb-20 px-12">
+        <div class="bg-gray-50 rounded-xl shadow-lg shadow-[hsl(216,100%,86%)] transition-all duration-100 ease-in-out hover:scale-105">
+            <a class="block px-6 mt-6 mb-6" href="#">
+                <img class="mx-auto object-contain rounded-xl"
+                    src="/img/products/hair-care/shampoo/shampoo-04-cover.png" alt="hair-care">
+                <h3 class="text-xl font-bold font-heading text-center mt-2">Hair Care</h3>
+            </a>
+        </div>
+        <div class="bg-gray-50 rounded-xl shadow-lg shadow-[hsl(216,100%,86%)] transition-all duration-100 ease-in-out hover:scale-105">
+            <a class="block px-6 mt-6 mb-6" href="#">
+                <img class="mx-auto object-contain rounded-xl"
+                    src="/img/products/skin-care/night-cream/skincare-cream-02-cover.png" alt="body-care">
+                <h3 class="text-xl font-bold font-heading text-center mt-2">Body Care</h3>
+            </a>
+        </div>
+        <div class="bg-gray-50 rounded-xl shadow-lg shadow-[hsl(216,100%,86%)] transition-all duration-100 ease-in-out hover:scale-105">
+            <a class="block px-6 mt-6 mb-6" href="#">
+                <img class="mx-auto object-contain rounded-xl h"
+                    src="/img/products/skin-care/toner/toner-01-cover.png" alt="skin-care">
+                <h3 class="text-xl font-bold font-heading text-center mt-2">Skin Care</h3>
+            </a>
+        </div>
+        <div class="bg-gray-50 rounded-xl shadow-lg shadow-[hsl(216,100%,86%)] transition-all duration-100 ease-in-out hover:scale-105">
+            <a class="block px-6 mt-6 mb-6 overflow-hidden" href="#">
+                <img class="mx-auto object-contain rounded-xl h-[283px] w-[424px] "
+                    src="/img/products/makeup/eyeshadow/eyeshadow-01-cover.png" alt="make-up">
+                <h3 class="text-xl font-bold font-heading text-center mt-2">Make-up</h3>
+            </a>
+        </div>
+        <div class="bg-gray-50 rounded-xl shadow-lg shadow-[hsl(216,100%,86%)] transition-all duration-100 ease-in-out hover:scale-105">
+            <a class="block px-6 mt-6 mb-6 overflow-hidden" href="#">
+                <img class="mx-auto object-contain rounded-xl h-[283px] w-[424px] "
+                    src="/img/products/fragrance/perfume/perfume-02.png" alt="fragrance">
+                <h3 class="text-xl font-bold font-heading text-center mt-2">Fragrance</h3>
+            </a>
+        </div>
+    </div>
     ${_footer}
 </body>
 
