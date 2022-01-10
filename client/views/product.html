@@ -33,71 +33,6 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js" defer></script>
     <script src="/src/payment.js" defer></script>
-    <!-- 
-    <style>
-        .top-img {
-            width: 100%;
-            height: 100%;
-            background-image: url(${product?.cover});
-            background-size: cover;
-            background-position: 50% 50%;
-        }
-
-        .container {
-            display: flex;
-            justify-content: center;
-            height: 100vh;
-            width: auto;
-            background-image: white;
-            background-image:
-                radial-gradient(at 20% 79%, hsla(41, 100%, 88%, 1) 0, transparent 100%),
-                radial-gradient(at 54% 6%, hsla(42, 100%, 89%, 1) 0, transparent 47%),
-                radial-gradient(at 81% 24%, hsla(41, 100%, 90%, 1) 0, transparent 52%),
-                radial-gradient(at 6% 15%, hsla(0, 81%, 80%, 1) 0, transparent 50%),
-                radial-gradient(at 90% 84%, hsla(0, 100%, 84%, 1) 0, transparent 50%);
-        }
-
-        .product_img,
-        .desc {
-            display: flex;
-            flex-direction: column;
-            align-self: center;
-        }
-
-        .product_img {
-            padding-right: 5em;
-
-        }
-
-        .product_img img {
-            background-color: rgba(255, 255, 255, 0.288);
-            border-radius: 1em;
-            padding: 60px;
-        }
-
-        .desc {
-            width: 30%;
-        }
-
-        .btn {
-            font-family: inherit;
-            margin-top: 2.5em;
-            padding: 0.7em;
-            border-radius: .5em;
-            background-color: rgb(0, 0, 0);
-            color: azure;
-        }
-
-        .text_under_btn {
-            margin-bottom: 0;
-            margin-top: .5em;
-            font-size: .7em;
-        }
-
-        .title {
-            font-weight: bold;
-        }
-    </style> -->
 </head>
 
 <body>
@@ -105,21 +40,21 @@
         ${_navBar}
         <div class="hero-card">
             <div class="h-[30.25rem]">
-                <img class="w-full object-cover -translate-y-1/4" src="${product.coverImg}"
+                <img class="w-auto lg:h-screen md:w-screen h-full object-cover lg:-translate-y-1/4" src="${product.coverImg}"
                     alt="Cover of ${product.name}" draggable="false">
             </div>
         </div>
     </header>
 
-    <section class="flex my-10">
+    <section class="flex my-10 flex-col lg:flex-row items-center">
         <div
-            class="flex flex-col justify-center p-8 mx-10 w-2/5 h-96 rounded-lg bg-white/70 shadow-lg shadow-[hsl(216,100%,86%)] overflow-hidden sticky top-20">
+            class="flex flex-col justify-around mb-10 lg:mb-0 p-8 lg:mx-10 w-4/5 lg:w-2/5 h-96 rounded-lg bg-white/70 shadow-lg shadow-[hsl(216,100%,86%)] overflow-hidden lg:sticky lg:top-20">
             <img class="h-3/4 mb-10 object-contain" src="${product.img}" alt="Image of ${product.name}"
                 draggable="false">
             <button id="pay" class="primary-btn">Add to cart</button>
         </div>
-        <div class="pr-10 w-3/5">
-            <div class="justify-center p-8 w-full h-80 rounded-lg bg-white/70 shadow-lg shadow-[hsl(216,100%,86%)]">
+        <div class="pr-10 lg:max-w-full md:w-auto w-fit">
+            <div class="justify-center p-8 h-80 rounded-lg bg-white/70 shadow-lg shadow-[hsl(216,100%,86%)]">
                 <div class="mb-5">
                     <div class="capitalize text-3xl font-black"> ${product.name} </div>
                     <div class="text-blue-600">
@@ -130,7 +65,7 @@
                         }).format(product.price)}
                     </div>
                 </div>
-                <div class="grid grid-cols-[minmax(100px,1fr)_minmax(500px,_3fr)] auto-cols-min ">
+                <div class="grid grid-cols-[minmax(100px,1fr)_minmax(500px,_3fr)] auto-cols-min">
                     ${Object.keys(product.description).map( key => {
                     return `
                     <div class="capitalize">${key}</div>
