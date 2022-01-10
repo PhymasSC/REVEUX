@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "name": "Night Serum",
+        "name": "NightSerum",
         "price": 199.99,
         "priceInCents": 19999,
         "image": "/img/products/skin-care/serum/serum-03.png",
@@ -16,7 +16,7 @@
     },
     {
         "id": 2,
-        "name": "Day Time Serum",
+        "name": "DayTimeSerum",
         "price": 199.99,
         "priceInCents": 19999,
         "image": "/img/products/skin-care/serum/serum-02.png",
