@@ -1,16 +1,7 @@
 const User = require("./../models/user");
 const express = require("express");
 const router = express.Router();
-const passport = require("passport");
-const initializePassport = require("./../passport-config");
-initializePassport(
-	passport,
-	name =>
-		User.findOne({
-			name: { $regex: new RegExp("^" + name.toLowerCase(), "i") }
-		}).then(userdata => userdata),
-	id => User.findOne({ _id: id }).then(userid => userid)
-);
+
 
 router.post(
 	"/",

@@ -25,7 +25,21 @@
                 ${
                 name ?
                 `<a class="px-5 py-2 text-sm font-medium" href="/shoppingcart"> Cart </a>
-                <a class="px-5 py-2 text-sm font-medium capitalize" href="/login"> ${name} </a>`
+                <div x-data="{ open: false }" class="px-5 py-2 text-sm font-medium capitalize"
+                    @mouseleave="open = false">
+                    <span @mouseover="open = true">
+                        ${name}
+                    </span>
+                    <div x-show="open"
+                        class="-mx-6 font-bold absolute shadow-lg shadow-[hsl(216,100%,86%)] bg-white rounded-lg p-6">
+                        <form action="/logout?_method=DELETE" method="POST">
+                            <button type="submit">
+                                Log out
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                `
                 :
                 `<a class="px-5 py-2 text-sm font-medium secondary-btn" href="/register"> Sign up</a>
                 <a class="px-5 py-2 text-sm font-medium primary-btn" href="/login"> Log in </a>`

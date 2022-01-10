@@ -40,18 +40,29 @@ const router = express.Router();
 
 // main().catch(console.error);
 
-router.post("/", (req, res) => {
+router.post("/", (req, res, next) => {
 	// create a user a new user
 	try {
-		const testUser = new User({
+		const user = new User({
 			name: req.body.username,
 			email: req.body.email,
 			password: req.body.password[0]
 		});
 
 		// save user to database
-		testUser.save();
-		res.redirect("/login");
+		user.save(function (err) {
+			if (err) {
+				console.log(err);
+			} else {
+				console.log("user: " + user + " saved.");
+				req.login(user, function (err) {
+					if (err) {
+						console.log(err);
+					}
+					return res.redirect("/");
+				});
+			}
+		});
 	} catch (err) {
 		res.redirect("/register");
 	}
