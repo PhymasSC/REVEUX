@@ -26,12 +26,13 @@
     <link rel="shortcut icon" href="/img/icons/Favicon.svg" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="/src/output.css">
+    <link rel="stylesheet" href="/src/styles.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js" defer></script>
+    <script src="/src/validation.js" defer></script>
 </head>
 
 <body>
@@ -47,20 +48,26 @@
                     <span class="">Sign in.</span>
                 </h2>
                 <form action="/login" method="POST" class="mt-8 space-y-6">
+
+                    ${messages.msg === "not_found" ?
+                    `<div class="text-red-600 mb-2 -mt-2 w-full bg-red-100 p-3 rounded-md">
+                        ${messages.name} does not exist!
+                    </div>`
+                    : (messages.msg === "wrong_password" ?
+                    `<div class="text-red-600 mb-2 -mt-2 w-full bg-red-100 p-3 rounded-md">
+                        Wrong password!
+                    </div>`
+                    : "")
+                    }
+
                     <div class="">
-                        <label for="email" class="label-input-field">
-                            <span>Email
-                                address</span>
+                        <label for="username" class="label-input-field">
+                            <span>Username</span>
                         </label>
                         <div class="mt-1 flex bg-gray-50 rounded-lg">
-                            <input id="email" name="email" type="email" autocomplete="email" required=""
-                                placeholder="Your Email" class="input-field">
-                            <svg class="h-6 w-6 mr-4 my-auto text-gray-300" xmlns="http://www.w3.org/2000/svg"
-                                fill="none" viewbox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207">
-                                </path>
-                            </svg>
+                            <input id="username" name="username" type="text" autocomplete="username" required=""
+                                placeholder="Your username" class="input-field"
+                                value="${messages.msg === 'wrong_password' ? messages.name : ''}">
                         </div>
                     </div>
                     <div x-data="{reveal: false}" class="space-y-1">

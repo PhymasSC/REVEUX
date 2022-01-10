@@ -26,7 +26,7 @@
     <link rel="shortcut icon" href="/img/icons/Favicon.svg" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="/src/output.css">
+    <link rel="stylesheet" href="/src/styles.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" rel="stylesheet">
@@ -51,7 +51,7 @@
                     <h2 class="mt-6 text-3xl font-extrabold text-neutral-600">
                         <span class="">Sign up.</span>
                     </h2>
-                    <form action="register" method="POST" class="mt-8 space-y-6"
+                    <form id="register-form" action="/register" method="POST" class="mt-8 space-y-6"
                         x-data="{username: '', email: '', password: '', confirmation_password: '', isReveal: false, isConfirmReveal: false}">
                         <div class="w-full">
                             <label for="username" class="label-input-field">
@@ -197,9 +197,9 @@
                             </div>
                         </div>
                         <div>
-                            <button class="flex items-center justify-center w-full primary-btn" type="submit">
-                                Sign up
-                            </button>
+                            <input class="flex items-center justify-center w-full primary-btn" type="submit"
+                                value="Sign Up">
+                            </input>
                         </div>
                     </form>
                     <div class="flex flex-col items-center gap-5 mt-5">

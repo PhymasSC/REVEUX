@@ -26,7 +26,7 @@
     <link rel="shortcut icon" href="/img/icons/Favicon.svg" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="/src/output.css">
+    <link rel="stylesheet" href="/src/styles.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" rel="stylesheet">
@@ -39,6 +39,7 @@
     <header class='antialiased'>
         ${_navBar}
         <div class="hero-card">
+            ${name? name : "No Such User"}
             <div class="mt-6 -mb-12 inset-0 flex flex-1 justify-center">
                 <img src="img/products/skin-care/skin-cream/skincare_cream_01.png" alt="Perfume"
                     class=" object-contain w-80" />
@@ -175,7 +176,7 @@
                         </svg>
                         <!-- <span class="relative">The</span> -->
                     </span>
-                   <span class="uppercase">membership</span>
+                    <span class="uppercase">membership</span>
                 </h2>
                 <p class="text-center text-gray-700 md:text-lg">
                     Spend over RM 4000 to become our Premium Member and enjoy the premium services of REVEUX.
@@ -183,7 +184,8 @@
                 </p>
             </div>
             <div class="grid max-w-md gap-8 row-gap-10 sm:mx-auto lg:max-w-full lg:grid-cols-3">
-                <div class="flex flex-col sm:flex-row border pl-5 pt-5 bg-gray-50 rounded-xl shadow-lg shadow-[hsl(216,100%,86%)]">
+                <div
+                    class="flex flex-col sm:flex-row border pl-5 pt-5 bg-gray-50 rounded-xl shadow-lg shadow-[hsl(216,100%,86%)]">
                     <div>
                         <h6 class="mb-2 font-semibold leading-5">Default Member</h6>
                         <p class="mb-3 text-sm text-gray-900">
@@ -213,7 +215,8 @@
                         </ul>
                     </div>
                 </div>
-                <div class="flex flex-col sm:flex-row border pl-5 pt-5 bg-gray-50 rounded-xl shadow-lg shadow-[hsl(216,100%,86%)]">
+                <div
+                    class="flex flex-col sm:flex-row border pl-5 pt-5 bg-gray-50 rounded-xl shadow-lg shadow-[hsl(216,100%,86%)]">
                     <div>
                         <h6 class="mb-2 font-semibold leading-5">Premium Member</h6>
                         <p class="mb-3 text-sm text-gray-900">
@@ -273,7 +276,8 @@
                         </ul>
                     </div>
                 </div>
-                <div class="flex flex-col sm:flex-row border pl-5 pt-5 bg-gray-50 rounded-xl shadow-lg shadow-[hsl(216,100%,86%)]">
+                <div
+                    class="flex flex-col sm:flex-row border pl-5 pt-5 bg-gray-50 rounded-xl shadow-lg shadow-[hsl(216,100%,86%)]">
                     <div>
                         <h6 class="mb-2 font-semibold leading-5">VIP</h6>
                         <p class="mb-3 text-sm text-gray-900">
@@ -318,7 +322,7 @@
                                             fill="none" points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
                                     </svg>
                                 </span>
-                                Get access to the latest products package early for free 
+                                Get access to the latest products package early for free
                             </li>
                             <li class="flex items-start">
                                 <span class="mr-1">
@@ -629,8 +633,7 @@
                         <blockquote class="flex flex-col bg-white/70 rounded-xl lg:flex-row ">
                             <div
                                 class="flex items-center justify-center p-8 lg:p-0 lg:w-full lg:items-start lg:justify-start lg:max-w-[30%]">
-                                <img src="https://cf.shopee.com.my/file/cb9054dfa63b31b1fa32b044a620d9df_tn"
-                                    alt=""
+                                <img src="https://cf.shopee.com.my/file/cb9054dfa63b31b1fa32b044a620d9df_tn" alt=""
                                     class="object-cover w-16 h-16 rounded-full lg:rounded-l-xl lg:rounded-r-none lg:w-full lg:h-full" />
 
                             </div>

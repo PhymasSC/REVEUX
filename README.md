@@ -70,3 +70,5 @@ REVEUX can be now accessed at http://localhost:5000/.
 - [Alpine js](https://alpinejs.dev/) is used for dropdown menu.
 - [Express es6 template engine](https://github.com/dondido/express-es6-template-engine) is used as the template engine.
 - [Atlas MongoDB](https://www.mongodb.com/atlas/database) is used as database.
+- [Passport](https://www.passportjs.org/) is used for login authenticaiton.
+- [Express-session](https://www.npmjs.com/package/express-session) is used for persistent login.

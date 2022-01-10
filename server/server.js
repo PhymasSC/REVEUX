@@ -6,6 +6,9 @@ const express = require("express");
 const app = express();
 const es6Renderer = require("express-es6-template-engine");
 const mongoose = require("mongoose");
+const passport = require("passport");
+const flash = require("express-flash");
+const session = require("express-session");
 const isFileExist = fname =>
 	fs.existsSync(`${__dirname}/../client/views/${fname}.html`);
 
@@ -43,13 +46,23 @@ connection.on("connected", () => {
 
 // productModel.find().then(data => console.log(data));
 
-// configure
+// configure app
 app.engine("html", es6Renderer);
 app.set("views", "client/views");
 app.set("view engine", "html");
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static(__dirname + "/../client"));
+app.use(flash());
+app.use(
+	session({
+		secret: process.env.SESSION_SECRET,
+		resave: false,
+		saveUninitialized: false
+	})
+);
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Establish routers
 app.use("/checkout", checkoutRouter);
@@ -60,7 +73,15 @@ app.use("/register", registerRouter);
 app.use("/login", loginRouter);
 
 app.get("/", (req, res) => {
-	res.render("index", RENDER);
+	res.render("index", {
+		locals: {
+			name: req?.user?.name
+		},
+		partials: {
+			_navBar: NAVBAR_PARTIAL,
+			_footer: FOOTER_PARTIAL
+		}
+	});
 });
 
 app.get("/:filename", (req, res) => {
@@ -68,7 +89,18 @@ app.get("/:filename", (req, res) => {
 		let file = req.params.filename.toString().toLowerCase();
 		if (!isFileExist(file)) return res.render("404", RENDER);
 		if (file === "product" || file === "index") return res.redirect("/");
-		res.render(file, RENDER);
+		res.render(file, {
+			locals: {
+				messages: {
+					msg: req.query?.msg,
+					name: req.query?.name
+				}
+			},
+			partials: {
+				_navBar: NAVBAR_PARTIAL,
+				_footer: FOOTER_PARTIAL
+			}
+		});
 	} catch (e) {
 		console.error(e);
 	}

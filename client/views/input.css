@@ -21,7 +21,6 @@
 @layer components {
     .theme {
         @apply text-[hsl(227,63%,25%)] bg-gradient-to-b from-[#E3F0FF] to-[#fafcff] h-full w-full scrollbar-thin overflow-y-scroll 
-        /* @apply text-[#182A6A] bg-gradient-to-b from-[#fdf5e7] to-[#fbebd0] h-full w-full scrollbar-thin overflow-y-scroll  */
     }
 
     .hero-card {
@@ -30,6 +29,7 @@
     .input-field {
         @apply block w-full px-5 py-3 text-base placeholder-gray-300 transition duration-500 ease-in-out transform border border-transparent bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300 rounded-lg 
     }
+    
     .label-input-field {
         @apply block text-sm font-medium
     }
@@ -53,5 +53,7 @@
             0px 60px 80px hsl(216 100% 46% / 7%)
     }
     
-
+    .input-field-warning{
+        @apply block w-full px-5 py-3 text-base placeholder-gray-300 transition duration-500 ease-in-out transform border border-transparent bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-red-300 rounded-lg 
+    }
 }
