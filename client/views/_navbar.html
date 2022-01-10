@@ -23,7 +23,10 @@
             <div class="items-center justify-end flex-1 hidden space-x-4 sm:flex">
 
                 ${
-                name ? "" :
+                name ?
+                `<a class="px-5 py-2 text-sm font-medium" href="/shoppingcart"> Cart </a>
+                <a class="px-5 py-2 text-sm font-medium capitalize" href="/login"> ${name} </a>`
+                :
                 `<a class="px-5 py-2 text-sm font-medium secondary-btn" href="/register"> Sign up</a>
                 <a class="px-5 py-2 text-sm font-medium primary-btn" href="/login"> Log in </a>`
                 }

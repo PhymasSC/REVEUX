@@ -27,14 +27,6 @@ const port = process.env.PORT || 5000;
 const NAVBAR_PARTIAL = `${__dirname}/../client/views/_navbar.html`;
 const FOOTER_PARTIAL = `${__dirname}/../client/views/_footer.html`;
 
-// renderer object
-const RENDER = {
-	partials: {
-		_navBar: NAVBAR_PARTIAL,
-		_footer: FOOTER_PARTIAL
-	}
-};
-
 mongoose.connect(process.env.DB_URL, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true
@@ -100,7 +92,20 @@ app.delete("/logout", (req, res) => {
 app.get("/:filename", (req, res) => {
 	try {
 		let file = req.params.filename.toString().toLowerCase();
-		if (!isFileExist(file)) return res.render("404", RENDER);
+		if (!isFileExist(file))
+			return res.render("404", {
+				locals: {
+					name: req?.user?.name,
+					messages: {
+						msg: req.query?.msg,
+						name: req.query?.name
+					}
+				},
+				partials: {
+					_navBar: NAVBAR_PARTIAL,
+					_footer: FOOTER_PARTIAL
+				}
+			});
 		if (file === "product" || file === "index") return res.redirect("/");
 		res.render(file, {
 			locals: {

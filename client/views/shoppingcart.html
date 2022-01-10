@@ -29,17 +29,20 @@
     <link rel="stylesheet" href="/src/styles.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fauna+One&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js" defer></script>
     <script src="/src/cart.js" defer></script>
 </head>
 
 
-<body>
-    <section class="py-20 bg-gray-100">
+<body class="theme">
+    <header>
+        ${_navBar}
+    </header>
+    <section class="py-20">
         <div class="container mx-auto px-4">
-            <div class="p-8 lg:p-20 bg-white">
+            <div class="p-8 lg:p-20 bg-white rounded-lg smooth-shadow-light">
                 <h2 class="mb-20 text-5xl font-bold font-heading">Your cart</h2>
                 <div class="flex flex-wrap items-center -mx-4">
                     <div class="w-full xl:w-8/12 mb-8 xl:mb-0 px-4">
@@ -211,6 +214,9 @@
             </div>
         </div>
     </section>
+    <footer>
+        ${_footer}
+    </footer>
 </body>
 
 </html>

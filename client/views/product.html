@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${product?.name}</title>
+    <title>${product?.name || 'Product'}</title>
     <meta name="title" content="REVEUX">
     <meta name="description" content="REVEUX is an ecommerce website which sells cosmetic related products. ">
     <!-- Open Graph / Facebook -->
@@ -125,7 +125,6 @@
                 <div>${key}</div>
                 <div>${product?.description[key]}</div>
                 `).join(" ")}
-                <!-- 然后这整段其实都是 javascript 这种做法的话就不需要template -->
             </div>
         </div>
         ${console.log(product)}
