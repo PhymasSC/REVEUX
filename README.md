@@ -59,6 +59,9 @@ $ npm run devStart
 ```
 STRIPE_SECRET_KEY=
 DB_URL=
+AUTH_EMAIL_USER=
+AUTH_EMAIL_PASS=
+SESSION_SECRET=
 ```
 REVEUX can be now accessed at http://localhost:5000/.
 

@@ -105,8 +105,8 @@
         ${_navBar}
         <div class="hero-card">
             <div class="h-[30.25rem]">
-                <img class="w-full object-cover -translate-y-1/4" src="${product?.cover}" alt="Cover of ${product.name}"
-                    draggable="false">
+                <img class="w-full object-cover -translate-y-1/4" src="${product.coverImg}"
+                    alt="Cover of ${product.name}" draggable="false">
             </div>
         </div>
     </header>
@@ -114,20 +114,33 @@
     <section class="flex my-10">
         <div
             class="flex flex-col justify-center p-8 mx-10 w-2/5 h-96 rounded-lg bg-white/70 shadow-lg shadow-[hsl(216,100%,86%)] overflow-hidden sticky top-20">
-            <img class="h-3/4 mb-10 object-contain" src="${product.image}" alt="Image of ${product.name}"
+            <img class="h-3/4 mb-10 object-contain" src="${product.img}" alt="Image of ${product.name}"
                 draggable="false">
             <button id="pay" class="primary-btn">Add to cart</button>
         </div>
         <div class="pr-10 w-3/5">
-            <div
-                class="grid grid-cols-[minmax(100px,1fr)_minmax(500px,_3fr)] auto-cols-min justify-center p-8 w-full h-80 rounded-lg bg-white/70 shadow-lg shadow-[hsl(216,100%,86%)]">
-                ${Object.keys(product.description).map( key => `
-                <div>${key}</div>
-                <div>${product?.description[key]}</div>
-                `).join(" ")}
+            <div class="justify-center p-8 w-full h-80 rounded-lg bg-white/70 shadow-lg shadow-[hsl(216,100%,86%)]">
+                <div class="mb-5">
+                    <div class="capitalize text-3xl font-black"> ${product.name} </div>
+                    <div class="text-blue-600">
+                        ${new Intl.NumberFormat(undefined, {
+                        style: "currency",
+                        currency: "MYR",
+                        minimumFractionDigits: 2
+                        }).format(product.price)}
+                    </div>
+                </div>
+                <div class="grid grid-cols-[minmax(100px,1fr)_minmax(500px,_3fr)] auto-cols-min ">
+                    ${Object.keys(product.description).map( key => {
+                    return `
+                    <div class="capitalize">${key}</div>
+                    <div class="capitalize">
+                        ${ product?.description[key]}
+                    </div>
+                    `}).join(" ")}
+                </div>
             </div>
         </div>
-        ${console.log(product)}
     </section>
 
     ${_footer}

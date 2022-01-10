@@ -1,34 +1,38 @@
+const Product = require("./../models/products");
 const express = require("express");
 const router = express.Router();
 
-const items = require("../../client/json/items.json");
 const NAVBAR_PARTIAL = `${__dirname}/../../client/views/_navbar.html`;
 const FOOTER_PARTIAL = `${__dirname}/../../client/views/_footer.html`;
 
-items.forEach(item => {
-	item.price = new Intl.NumberFormat(undefined, {
+function formatCurrency(currency, locale) {
+	return new Intl.NumberFormat(undefined, {
 		style: "currency",
-		currency: "MYR",
+		currency: locale,
 		minimumFractionDigits: 2
-	}).format(item.price);
+	}).format(currency);
+}
 
-	router.get(`/${item.name}`, (req, res) => {
-		res.render("product", {
-			locals: {
-				name: req?.user?.name,
-				product: item,
-				arithmetic: 3,
-				messages: {
-					msg: req.query?.msg,
-					name: req.query?.name
-				}
-			},
-			partials: {
-				_navBar: NAVBAR_PARTIAL,
-				_footer: FOOTER_PARTIAL
+router.get(`/*`, async (req, res) => {
+	const id = req._parsedOriginalUrl?.pathname.substring(9);
+
+	const product = await Product.findOne({ _id: id }).then(data => data);
+
+	if (product === null) return res.redirect("/404");
+
+	res.render("product", {
+		locals: {
+			name: req?.user?.name,
+			product: product,
+			messages: {
+				msg: req.query?.msg,
+				name: req.query?.name
 			}
-		});
+		},
+		partials: {
+			_navBar: NAVBAR_PARTIAL,
+			_footer: FOOTER_PARTIAL
+		}
 	});
 });
-
 module.exports = router;
