@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REVEUX</title>
+    <meta name="title" content="REVEUX">
+    <meta name="description" content="REVEUX is an ecommerce website which sells cosmetic related products. ">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://metatags.io/">
+    <meta property="og:title" content="REVEUX">
+    <meta property="og:description" content="REVEUX is an ecommerce website which sells cosmetic related products. ">
+    <meta property="og:image"
+        content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://metatags.io/">
+    <meta property="twitter:title" content="REVEUX">
+    <meta property="twitter:description"
+        content="REVEUX is an ecommerce website which sells cosmetic related products. ">
+    <meta property="twitter:image"
+        content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+    <link rel="shortcut icon" href="/img/icons/Favicon.svg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/src/output.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js" defer></script>
+</head>
+
+<body>
+    <header>
+        ${_navBar}
+    </header>
+    <div class="flex justify-center mb-14">
+        <div class="mt-14 bg-gray-50 rounded-3xl shadow-lg shadow-[hsl(216,100%,86%)] lg:w-[950px] lg:h-[650px] md:w-[750px] sm:w-[500px] w-[450px] h-[1000px]">
+            <h1 class="pl-10 pt-5 text-2xl font-bold mt-4">CHECKOUT</h1>
+            <form action="">
+                <div class="flex justify-evenly flex-col mt-3 lg:flex-row md:flex-col sm:flex-col">
+                    <div class="mx-auto">
+                        <h3>PERSONAL DETAILS</h3>
+                        <table>
+                            <tr class="flex flex-col pb-3 pt-2">
+                                <td><label for="name">
+                                        <span class="after:content-['*'] after:ml-0.5 after:text-red-500">Name</span>
+                                    </label></td>
+                                <td><input type="text" class="bg-gray-100 rounded-xl px-2 py-2 w-[350px]"></td>
+                            </tr>
+                            <tr class="flex flex-col pb-3 pt-2">
+                                <td><label for="email">
+                                    <span class="after:content-['*'] after:ml-0.5 after:text-red-500">Email Address</span>
+                                </label></td>
+                                <td><input type="email" class="bg-gray-100 rounded-xl px-2 py-2 w-[350px]"></td>
+                            </tr>
+                            <tr class="flex flex-col pb-3 pt-2">
+                                <td><label for="phone">
+                                        <span class="after:content-['*'] after:ml-0.5 after:text-red-500">Phone
+                                            Number</span>
+                                    </label></td>
+                                <td><input type="text" class="bg-gray-100 rounded-xl px-2 py-2 w-[350px]"></td>
+                            </tr>
+                            <tr class="flex flex-col pb-3 pt-2">
+                                <td><label for="addr1">
+                                        <span class="after:content-['*'] after:ml-0.5 after:text-red-500">Address
+                                            1</span>
+                                    </label></td>
+                                <td><input type="text" class="bg-gray-100 rounded-xl px-2 py-2 w-[350px]"></td>
+                            </tr>
+                            <tr class="flex flex-col pb-3 pt-2">
+                                <td><label for="addr2">
+                                        <span class="after:content-['*'] after:ml-0.5 after:text-red-500">Address
+                                            2</span>
+                                    </label></td>
+                                <td><input type="text" class="bg-gray-100 rounded-xl px-2 py-2 w-[350px]"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="mx-auto">
+                        <h3>CARD DETAILS</h3>
+                        <div>
+                            <button type="button" class="focus:border-2 focus:border-gray-300"><img src="/img/mastercard.png" alt="master"></button>
+                            <button type="button" class="focus:border-2 focus:border-gray-300"><img src="/img/visa.png" alt="visa"></button>
+                            <button type="button" class="focus:border-2 focus:border-gray-300"><img src="/img/american-express.png" alt="amex"></button>
+                            <button type="button" class="focus:border-2 focus:border-gray-300"><img src="/img/debit-card.png" alt="debit"></button>
+                        </div>
+                        <table>
+                            <tr class="flex flex-col pb-3 pt-2">
+                                <td><label for="Cardholder">
+                                        <span class="after:content-['*'] after:ml-0.5 after:text-red-500">Cardholder
+                                            Name</span>
+                                    </label></td>
+                                <td><input type="text" class="bg-gray-100 rounded-xl px-2 py-2 w-[350px]"></td>
+                            </tr>
+                            <tr class="flex flex-col pb-3 pt-2">
+                                <td><label for="cardNum">
+                                        <span class="after:content-['*'] after:ml-0.5 after:text-red-500">Card
+                                            Number</span>
+                                    </label></td>
+                                <td><input type="text" class="bg-gray-100 rounded-xl px-2 py-2 w-[350px]"></td>
+                            </tr>
+                            <tr class="flex flex-col pb-3 pt-2">
+                                <td><label for="valid">
+                                        <span class="after:content-['*'] after:ml-0.5 after:text-red-500">Valid Through
+                                            (MM/YY)</span>
+                                    </label></td>
+                                <td><input type="text" class="bg-gray-100 rounded-xl px-2 py-2 w-[350px]"></td>
+                            </tr>
+                            <tr class="flex flex-col pb-3 pt-2">
+                                <td><label for="CVV">
+                                        <span class="after:content-['*'] after:ml-0.5 after:text-red-500">CVV</span>
+                                    </label></td>
+                                <td><input type="text" class="bg-gray-100 rounded-xl px-2 py-2 w-[350px]"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="flex justify-center align-middle mt-3">
+                    <button type="submit" class="primary-btn w-[350px]">CHECKOUT</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    ${_footer}
+</body>
+
+</html>

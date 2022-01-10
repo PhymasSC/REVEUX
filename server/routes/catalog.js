@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const categories = [
 	"Hair-Care",
-	"skin-Care",
+	"Skin-Care",
 	"Body-Care",
 	"Make-up",
 	"Fragrance"
