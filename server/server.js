@@ -9,6 +9,8 @@ const mongoose = require("mongoose");
 const passport = require("passport");
 const flash = require("express-flash");
 const session = require("express-session");
+const methodOverride = require("method-override");
+const cors = require("cors");
 const isFileExist = fname =>
 	fs.existsSync(`${__dirname}/../client/views/${fname}.html`);
 
@@ -54,6 +56,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static(__dirname + "/../client"));
 app.use(flash());
+app.use(methodOverride("_method"));
+app.use(
+	cors({
+		origin: "*"
+	})
+);
 app.use(
 	session({
 		secret: process.env.SESSION_SECRET,
@@ -84,6 +92,11 @@ app.get("/", (req, res) => {
 	});
 });
 
+app.delete("/logout", (req, res) => {
+	req.logOut();
+	res.redirect("/login");
+});
+
 app.get("/:filename", (req, res) => {
 	try {
 		let file = req.params.filename.toString().toLowerCase();
@@ -91,6 +104,7 @@ app.get("/:filename", (req, res) => {
 		if (file === "product" || file === "index") return res.redirect("/");
 		res.render(file, {
 			locals: {
+				name: req?.user?.name,
 				messages: {
 					msg: req.query?.msg,
 					name: req.query?.name

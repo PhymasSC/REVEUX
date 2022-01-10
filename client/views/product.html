@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Page</title>
+    <title>${product?.name}</title>
     <meta name="title" content="REVEUX">
     <meta name="description" content="REVEUX is an ecommerce website which sells cosmetic related products. ">
     <!-- Open Graph / Facebook -->
@@ -114,16 +114,17 @@
     <section class="flex my-10">
         <div
             class="flex flex-col justify-center p-8 mx-10 w-2/5 h-96 rounded-lg bg-white/70 shadow-lg shadow-[hsl(216,100%,86%)] overflow-hidden sticky top-20">
-            <img class="h-3/4 mb-10 object-contain" src="${product.image}" alt="Image of ${product.name}" draggable="false">
+            <img class="h-3/4 mb-10 object-contain" src="${product.image}" alt="Image of ${product.name}"
+                draggable="false">
             <button id="pay" class="primary-btn">Add to cart</button>
         </div>
         <div class="pr-10 w-3/5">
             <div
                 class="grid grid-cols-[minmax(100px,1fr)_minmax(500px,_3fr)] auto-cols-min justify-center p-8 w-full h-80 rounded-lg bg-white/70 shadow-lg shadow-[hsl(216,100%,86%)]">
                 ${Object.keys(product.description).map( key => `
-                    <div>${key}</div>
-                    <div>${product?.description[key]}</div>
-                `).join(" ")} 
+                <div>${key}</div>
+                <div>${product?.description[key]}</div>
+                `).join(" ")}
                 <!-- 然后这整段其实都是 javascript 这种做法的话就不需要template -->
             </div>
         </div>
