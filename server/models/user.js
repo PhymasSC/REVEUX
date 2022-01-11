@@ -21,7 +21,8 @@ const userSchema = new mongoose.Schema({
 		match: [
 			/^[a-zA-Z0-9_.-]+@.+\.(com|my|sg|jp|id|th|vn|kr|hk|tw|mm)$/,
 			"Please fill in a valid email address"
-		]
+		],
+		lowercase: true
 	},
 	password: {
 		type: String,
@@ -29,6 +30,7 @@ const userSchema = new mongoose.Schema({
 	},
 	createdAt: {
 		type: Date,
+		immutable: true,
 		default: Date.now
 	}
 });

@@ -38,23 +38,23 @@
 <body>
     <header class='antialiased '>
         ${_navBar}
-        <div class="hero-card">
+        <div class="hero-card mb-0 xl:mb-20">
             <div class="h-[30.25rem]">
-                <img class="w-auto lg:h-screen md:w-screen h-full object-cover lg:-translate-y-1/4" src="${product.coverImg}"
-                    alt="Cover of ${product.name}" draggable="false">
+                <img class="w-auto lg:h-screen md:w-screen h-full object-cover lg:-translate-y-1/4"
+                    src="${product.coverImg}" alt="Cover of ${product.name}" draggable="false">
             </div>
         </div>
     </header>
 
-    <section class="flex my-10 flex-col lg:flex-row items-center">
+    <section class="flex p-10 xl:my-10 flex-col xl:flex-row items-center xl:items-start">
         <div
-            class="flex flex-col justify-around mb-10 lg:mb-0 p-8 lg:mx-10 w-4/5 lg:w-2/5 h-96 rounded-lg bg-white/70 shadow-lg shadow-[hsl(216,100%,86%)] overflow-hidden lg:sticky lg:top-20">
+            class="flex flex-col justify-around w-full mb-10 xl:mb-0 p-8 xl:mx-10 xl:w-2/5 h-96 rounded-lg bg-white/70 shadow-lg shadow-[hsl(216,100%,86%)] overflow-hidden xl:sticky xl:top-20">
             <img class="h-3/4 mb-10 object-contain" src="${product.img}" alt="Image of ${product.name}"
                 draggable="false">
             <button id="pay" class="primary-btn">Add to cart</button>
         </div>
-        <div class="pr-10 lg:max-w-full md:w-auto w-fit">
-            <div class="justify-center p-8 h-80 rounded-lg bg-white/70 shadow-lg shadow-[hsl(216,100%,86%)]">
+        <div class="xl:max-w-full xl:w-auto w-full">
+            <div class="justify-center p-8 rounded-lg bg-white/70 shadow-lg shadow-[hsl(216,100%,86%)] h-min">
                 <div class="mb-5">
                     <div class="capitalize text-3xl font-black"> ${product.name} </div>
                     <div class="text-blue-600">
@@ -65,12 +65,16 @@
                         }).format(product.price)}
                     </div>
                 </div>
-                <div class="grid grid-cols-[minmax(100px,1fr)_minmax(500px,_3fr)] auto-cols-min">
-                    ${Object.keys(product.description).map( key => {
+                <div class="grid grid-cols-[minmax(auto,1fr)_minmax(auto,3fr)] w-full capitalize overflow-hidden">
+                    ${Object.keys(product.description[0]).map( key => {
                     return `
-                    <div class="capitalize">${key}</div>
-                    <div class="capitalize">
-                        ${ product?.description[key]}
+                    <div class="my-2 break-words">${key}</div>
+                    <div class="my-2 break-words">
+
+                        ${ typeof((product?.description[0])[key]) !== "string" ?
+                        (product?.description[0])[key].join(", ") :
+                        (product?.description[0])[key]
+                        }
                     </div>
                     `}).join(" ")}
                 </div>

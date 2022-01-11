@@ -17,7 +17,7 @@ router.get(`/*`, async (req, res) => {
 	const id = req._parsedOriginalUrl?.pathname.substring(9);
 
 	const product = await Product.findOne({ _id: id }).then(data => data);
-
+	console.log(product);
 	if (product === null) return res.redirect("/404");
 
 	res.render("product", {

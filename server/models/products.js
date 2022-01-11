@@ -7,12 +7,7 @@ const productsSchema = new mongoose.Schema({
 	},
 	price: Number,
 	priceInCents: Number,
-	description: {
-		"skin concern": [String],
-		formulation: String,
-		age: String,
-		ingredients: [String]
-	},
+	description: [mongoose.Schema.Types.Mixed],
 	category: String,
 	coverImg: String,
 	img: String

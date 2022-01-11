@@ -12,6 +12,8 @@ const session = require("express-session");
 const methodOverride = require("method-override");
 const cors = require("cors");
 const initializePassport = require("./passport-config");
+const User = require("./models/user");
+
 initializePassport(
 	passport,
 	name =>
