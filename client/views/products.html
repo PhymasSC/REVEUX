@@ -99,7 +99,7 @@
             </div>
             <div class="flex -mx-3 mb-24">
                 <!-- Filter in mobile view -->
-                <div class="w-full lg:hidden px-3">
+                <!-- <div class="w-full lg:hidden px-3">
                     <div class="flex flex-wrap -mx-2">
                         <div class="w-1/2 md:w-1/3 px-2 mb-4">
                             <div class="py-6 px-2 text-center bg-gray-50">
@@ -115,7 +115,7 @@
                                             Oil</a></li>
                                 </ul>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- <div class="w-1/2 md:w-1/3 px-2 mb-4">
                             <div class="py-6 px-2 text-center bg-gray-50">
                                 <a class="font-bold font-heading" href="#">Colors</a>
@@ -154,7 +154,7 @@
                                 </div>
                             </div>
                         </div> -->
-                        <div class="w-1/2 md:w-1/3 px-2 mb-4">
+                        <!-- <div class="w-1/2 md:w-1/3 px-2 mb-4">
                             <div class="py-6 px-4 text-center bg-gray-50">
                                 <a class="font-bold font-heading" href="#">Price</a>
                                 <div class="hidden mt-6">
@@ -231,7 +231,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Filter in laptop view -->
                 <div class="hidden lg:block w-1/4 px-3">
@@ -302,11 +302,10 @@
                     console.log(data)
                     return `
                     <!-- <div class="w-full sm:w-1/2 md:w-1/3 px-3 mb-8"> -->
-                    <div
-                        class="p-6 bg-gray-50 rounded-xl shadow-lg shadow-[hsl(216,100%,86%)]">
+                    <div class="p-6 bg-gray-50 rounded-xl shadow-lg shadow-[hsl(216,100%,86%)]">
                         <a class=" px-6 mt-6 mb-2" href="/product/${data.id}">
-                            <div class="w-max m-auto">
-                                <img class="mb-5 mx-auto h-56 w-full object-contain" src=${data.img} alt="">
+                            <div class="w-auto m-auto">
+                                <img class="mb-5 mx-auto h-56 object-contain" src=${data.img} alt="">
                             </div>
                             <h3 class="mb-2 text-xl font-bold font-heading capitalize">${data.name}</h3>
                             <p class="text-lg font-bold font-heading text-blue-500">
