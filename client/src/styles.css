@@ -1380,12 +1380,6 @@ body {
   width: 25%;
 }
 
-.w-max {
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-}
-
 .w-12 {
   width: 3rem;
 }
