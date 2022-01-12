@@ -159,20 +159,25 @@
                                 </div>
                             </div>
                             <div class="flex py-1">
-                                <div :class="{'!text-green-600': password.length >= 7}"
+                                <div :class="{'!text-green-600': password.match(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{7,}$/g)}"
                                     class="text-red-600 rounded-full p-1 fill-current">
                                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path x-show="password.length >= 7" stroke-linecap="round"
-                                            stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                        <path x-show="password.length < 7" stroke-linecap="round"
-                                            stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                        <path
+                                            x-show="password.match(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{7,}$/g)"
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7" />
+                                        <path
+                                            x-show="!password.match(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{7,}$/g)"
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M6 18L18 6M6 6l12 12" />
 
                                     </svg>
                                 </div>
                                 <div>
-                                    <span :class="{'!text-green-600': password.length >= 7}"
+                                    <span
+                                        :class="{'!text-green-600': password.match(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{7,}$/g)}"
                                         class="text-red-600 font-medium text-sm"
-                                        x-text="password.length >= 7 ? 'The password is validated' : 'Password required at least 7 characters, 1 uppercase, 1 lowercase, 1 numeric and 1 special characters'"></span>
+                                        x-text="password.match(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{7,}$/g) ? 'The password is validated' : 'Password required at least 7 characters, 1 uppercase, 1 lowercase, 1 numeric and 1 special characters'"></span>
                                 </div>
                             </div>
                             <div class="flex py-1">

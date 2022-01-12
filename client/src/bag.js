@@ -1,8 +1,4 @@
-if(document.readyState == "loading") {
-    document.addEventListener("DOMContentLoaded", ready);
-} else {
-    ready();
-}
+ready()
 
 function ready(){
     let btnRemove = document.querySelectorAll("#btn-remove-item");
