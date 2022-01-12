@@ -190,9 +190,11 @@
                             }</span>
                     </div>
                     <div class="flex justify-center">
-                        <button type="submit">
-                            <a class="primary-btn px-20" href="/payment">Go to Checkout</a>
-                        </button>
+                        <form action="/checkout?name=${name}" method="POST">
+                            <button type="submit" class="primary-btn px-20">
+                                Go to Checkout
+                            </button>
+                        </form>
                     </div>
                     <!-- </div> -->
                 </div>
