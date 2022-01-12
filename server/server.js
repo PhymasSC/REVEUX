@@ -13,6 +13,7 @@ const methodOverride = require("method-override");
 const cors = require("cors");
 const initializePassport = require("./passport-config");
 const User = require("./models/user");
+const Item = require("./models/item");
 
 initializePassport(
 	passport,

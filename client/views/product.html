@@ -51,12 +51,15 @@
             class="flex flex-col justify-around w-full mb-10 xl:mb-0 p-8 xl:mx-10 xl:w-2/5 h-96 rounded-lg bg-white/70 shadow-lg shadow-[hsl(216,100%,86%)] overflow-hidden xl:sticky xl:top-20">
             <img class="h-3/4 mb-10 object-contain" src="${product.img}" alt="Image of ${product.name}"
                 draggable="false">
-            <button id="pay" class="primary-btn">Add to cart</button>
+            <form action="./${product._id}/addToBag?name=${name}" method="POST">
+                <button type="submit" class="primary-btn capitalize w-full">Add to bag</button>
+            </form>
         </div>
         <div class="xl:max-w-full xl:w-auto w-full">
             <div class="justify-center p-8 rounded-lg bg-white/70 shadow-lg shadow-[hsl(216,100%,86%)] h-min">
                 <div class="mb-5">
-                    <div class="capitalize text-3xl font-black"> ${product.name} </div>
+
+                    <div class="capitalize text-3xl font-black"> ${product.name}</div>
                     <div class="text-blue-600">
                         ${new Intl.NumberFormat(undefined, {
                         style: "currency",
