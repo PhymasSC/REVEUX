@@ -1,7 +1,8 @@
 const emailpattern =
 	/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 const passPattern =
-	/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{7,}$/g;
+	// /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{7,}$/;
+	 /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})$/;
 const namePattern =
 	/^(?=.{3,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/;
 let form = document.querySelector("#register-form");
@@ -23,7 +24,8 @@ form.addEventListener("submit", e => {
 		name.value.length < 3 ||
 		!name.value.match(namePattern) ||
 		!email.value.match(emailpattern) ||
-		!pass.value.match(passPattern) ||
+		// !pass.value.match(passPattern) ||
+		!passPattern.test(pass.value) ||
 		pass.value != rePass.value
 	) {
 		window.scrollTo({ top: posForm, behavior: "smooth" });
