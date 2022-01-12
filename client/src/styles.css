@@ -1201,10 +1201,6 @@ body {
   height: 100%;
 }
 
-.h-32 {
-  height: 8rem;
-}
-
 .h-\[283px\] {
   height: 283px;
 }
@@ -2008,14 +2004,14 @@ body {
   line-height: 1;
 }
 
-.text-xs {
-  font-size: 0.75rem;
-  line-height: 1rem;
-}
-
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 
 .text-base {
@@ -2736,10 +2732,6 @@ body {
 
   .md\:w-4\/6 {
     width: 66.666667%;
-  }
-
-  .md\:w-24 {
-    width: 6rem;
   }
 
   .md\:w-\[750px\] {

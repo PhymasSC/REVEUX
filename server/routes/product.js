@@ -77,7 +77,7 @@ router.post("/:productId/addToBag", async (req, res) => {
 				item.amount++;
 				item.save();
 
-				return res.redirect("/shoppingcart");
+				return res.redirect("/bag");
 			} else {
 				//product does not exists in cart, add new item
 				const item = await Item.create({
@@ -88,9 +88,8 @@ router.post("/:productId/addToBag", async (req, res) => {
 				const bag = await Bag.findOne({ name: username }).then(data => data);
 
 				bag.itemsId.push(item._id);
-				console.log("Here");
 				await bag.save();
-				return res.redirect("/shoppingcart");
+				return res.redirect("/bag");
 			}
 		} else {
 			//no cart for user, create new cart
@@ -104,7 +103,7 @@ router.post("/:productId/addToBag", async (req, res) => {
 
 			newBag.itemsId.push(item._id);
 			await newBag.save();
-			return res.redirect("/shoppingcart");
+			return res.redirect("/bag");
 		}
 	} catch (e) {
 		return res.redirect("/login");
