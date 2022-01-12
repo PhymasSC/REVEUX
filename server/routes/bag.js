@@ -27,7 +27,7 @@ router.get("/", async (req, res) => {
 
 	res.render("bag", {
 		locals: {
-			name: req?.user?.name,
+			name: req.user?.name,
 			messages: {
 				msg: req.query?.msg,
 				name: req.query?.name

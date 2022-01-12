@@ -20,7 +20,7 @@ categories.forEach(category => {
 			locals: {
 				category: category,
 				productList: products,
-				name: req?.user?.name,
+				name: req.user?.name,
 				messages: {
 					msg: req.query?.msg,
 					name: req.query?.name
