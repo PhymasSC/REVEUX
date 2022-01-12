@@ -153,12 +153,25 @@
                     <h2 class="mb-6 text-4xl font-bold font-heading">Bag totals</h2>
                     <div class="flex mb-8 items-center justify-between pb-5 border-b subtotal" id="sub">
                         <span>Subtotal</span>
-                        <span class="text-xl font-bold font-heading subtotal-price" id="subtotal">RM89.67</span>
+                        <span class="text-xl font-bold font-heading subtotal-price" id="subtotal">${
+                            new
+                            Intl.NumberFormat(undefined, {
+                            style: "currency",
+                            currency: "MYR",
+                            minimumFractionDigits: 2
+                            }).format( bag[0].itemsId.reduce( (prev, curr) => prev + (curr.amount *
+                            curr.productId.price) , 0 ) )
+                            }</span>
                     </div>
                     <h4 class="mb-2 text-xl font-bold font-heading">Shipping</h4>
                     <div class="flex mb-2 justify-between items-center">
                         <span>Next day</span>
-                        <span class="text-xl font-bold font-heading" id="shipFee">RM11.00</span>
+                        <span class="text-xl font-bold font-heading" id="shipFee">${new
+                            Intl.NumberFormat(undefined, {
+                            style: "currency",
+                            currency: "MYR",
+                            minimumFractionDigits: 2
+                            }).format( 11 )}</span>
                     </div><br>
                     <!-- <div class="flex mb-10 justify-between items-center">
                                     <span class="text-blue-50">Shipping to United States</span>
@@ -166,7 +179,15 @@
                                 </div> -->
                     <div class="flex mb-10 justify-between items-center total">
                         <span class="text-xl font-bold font-heading">Order total</span>
-                        <span class="text-xl font-bold font-heading" id="total">RM100.67</span>
+                        <span class="text-xl font-bold font-heading" id="total">${
+                            new
+                            Intl.NumberFormat(undefined, {
+                            style: "currency",
+                            currency: "MYR",
+                            minimumFractionDigits: 2
+                            }).format( bag[0].itemsId.reduce( (prev, curr) => prev + (curr.amount *
+                            curr.productId.price) , 0 ) + 11 )
+                            }</span>
                     </div>
                     <div class="flex justify-center">
                         <button type="submit">
