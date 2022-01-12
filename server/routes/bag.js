@@ -3,7 +3,6 @@ const Item = require("./../models/item");
 const Product = require("./../models/product");
 const User = require("./../models/user");
 const express = require("express");
-const { vary } = require("express/lib/response");
 const router = express.Router();
 
 const NAVBAR_PARTIAL = `${__dirname}/../../client/views/_navbar.html`;

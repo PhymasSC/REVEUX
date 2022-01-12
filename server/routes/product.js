@@ -37,6 +37,7 @@ router.post("/:productId/addToBag", async (req, res) => {
 	const username = req.query.name;
 	const productId = req.params.productId;
 
+	console.log("TEST");
 	// Get all required model
 
 	try {
@@ -77,7 +78,7 @@ router.post("/:productId/addToBag", async (req, res) => {
 				item.amount++;
 				item.save();
 
-				return res.redirect("/bag");
+				return res.redirect(`/product/${productId}`);
 			} else {
 				//product does not exists in cart, add new item
 				const item = await Item.create({
@@ -89,7 +90,7 @@ router.post("/:productId/addToBag", async (req, res) => {
 
 				bag.itemsId.push(item._id);
 				await bag.save();
-				return res.redirect("/bag");
+				return res.redirect(`/product/${productId}`);
 			}
 		} else {
 			//no cart for user, create new cart
@@ -103,7 +104,7 @@ router.post("/:productId/addToBag", async (req, res) => {
 
 			newBag.itemsId.push(item._id);
 			await newBag.save();
-			return res.redirect("/bag");
+			return res.redirect(`/product/${productId}`);
 		}
 	} catch (e) {
 		return res.redirect("/login");
