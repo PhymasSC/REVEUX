@@ -1,4 +1,6 @@
 # REVEUX
+[![DeepScan grade](https://deepscan.io/api/teams/15500/projects/19844/branches/521051/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=15500&pid=19844&bid=521051)
+
 A web design assignment of subject CSF3206 in University of Malaysia Terengganu. This project is built with Node Js, Express Js, MongoDB, Tailwind and Stripe in MVC architecture.
 
 

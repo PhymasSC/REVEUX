@@ -11,11 +11,14 @@ const categories = [
 
 categories.forEach(category => {
 	router.get(`/${category}`, async (req, res) => {
+		// Retrieve all products from database
 		const products = (await Product.find().then(data => data)).filter(
 			data => data.category === category.toLowerCase()
 		);
+
 		res.render("products", {
 			locals: {
+				category: category,
 				productList: products,
 				name: req?.user?.name,
 				messages: {

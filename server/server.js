@@ -84,12 +84,12 @@ app.use("/catalog", catalogRouter);
 app.use("/contact", contactRouter);
 app.use("/register", registerRouter);
 app.use("/login", loginRouter);
-app.use("/shoppingcart", bagRouter);
+app.use("/bag", bagRouter);
 
 app.get("/", (req, res) => {
 	res.render("index", {
 		locals: {
-			name: req?.user?.name
+			name: req.user?.name
 		},
 		partials: {
 			_navBar: NAVBAR_PARTIAL,
@@ -109,7 +109,7 @@ app.get("/:filename", (req, res) => {
 		if (!isFileExist(file))
 			return res.render("404", {
 				locals: {
-					name: req?.user?.name,
+					name: req.user?.name,
 					messages: {
 						msg: req.query?.msg,
 						name: req.query?.name
@@ -123,7 +123,7 @@ app.get("/:filename", (req, res) => {
 		if (file === "product" || file === "index") return res.redirect("/");
 		res.render(file, {
 			locals: {
-				name: req?.user?.name,
+				name: req.user?.name,
 				messages: {
 					msg: req.query?.msg,
 					name: req.query?.name

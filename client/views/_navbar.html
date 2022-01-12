@@ -24,7 +24,7 @@
 
                 ${
                 name ?
-                `<a class="px-5 py-2 text-sm font-medium" href="/shoppingcart"> Bag </a>
+                `<a class="px-5 py-2 text-sm font-medium" href="/bag?name=${name}"> Bag </a>
                 <div x-data="{ open: false }" class="px-5 py-2 text-sm font-medium capitalize"
                     @mouseleave="open = false">
                     <span @mouseover="open = true">

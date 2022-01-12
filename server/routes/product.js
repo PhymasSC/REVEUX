@@ -9,14 +9,6 @@ const router = express.Router();
 const NAVBAR_PARTIAL = `${__dirname}/../../client/views/_navbar.html`;
 const FOOTER_PARTIAL = `${__dirname}/../../client/views/_footer.html`;
 
-function formatCurrency(currency, locale) {
-	return new Intl.NumberFormat(undefined, {
-		style: "currency",
-		currency: locale,
-		minimumFractionDigits: 2
-	}).format(currency);
-}
-
 router.get(`/:productId`, async (req, res) => {
 	// Get product
 	const product = await Product.findOne({ _id: req.params.productId }).then(
@@ -27,7 +19,7 @@ router.get(`/:productId`, async (req, res) => {
 
 	res.render("product", {
 		locals: {
-			name: req?.user?.name,
+			name: req.user?.name,
 			product: product,
 			messages: {
 				msg: req.query?.msg,
@@ -46,27 +38,19 @@ router.post("/:productId/addToBag", async (req, res) => {
 	const productId = req.params.productId;
 
 	// Get all required model
-	const product = await Product.findOne({ _id: productId }).then(data => data);
-	const user = await User.findOne({ name: username }).then(data => data);
-	const bag = await Bag.findOne({ name: username });
 
-	const userId = user._id;
+	try {
+		const product = await Product.findOne({ _id: productId }).then(
+			data => data
+		);
+		const user = await User.findOne({ name: username }).then(data => data);
+		const bag = await Bag.findOne({ name: username });
 
-	if (bag) {
-		// If the user have an existing bag
-		let itemIndex = (
-			await bag
-				.populate({
-					path: "itemsId",
-					model: Item,
-					populate: [{ path: "productId", model: Product }]
-				})
-				.then(data => data)
-		).itemsId.findIndex(item => item.productId.id === product.id);
+		const userId = user._id;
 
-		if (itemIndex > -1) {
-			//product exists in the cart, update the quantity
-			const itemId = (
+		if (bag) {
+			// If the user have an existing bag
+			let itemIndex = (
 				await bag
 					.populate({
 						path: "itemsId",
@@ -74,41 +58,56 @@ router.post("/:productId/addToBag", async (req, res) => {
 						populate: [{ path: "productId", model: Product }]
 					})
 					.then(data => data)
-			).itemsId.filter(item => item.productId.id === product.id);
-			const item = await Item.findOne({ _id: itemId }).then(data => data);
+			).itemsId.findIndex(item => item.productId.id === product.id);
 
-			// Increment amount
-			item.amount++;
-			item.save();
+			if (itemIndex > -1) {
+				//product exists in the cart, update the quantity
+				const itemId = (
+					await bag
+						.populate({
+							path: "itemsId",
+							model: Item,
+							populate: [{ path: "productId", model: Product }]
+						})
+						.then(data => data)
+				).itemsId.filter(item => item.productId.id === product.id);
+				const item = await Item.findOne({ _id: itemId }).then(data => data);
 
-			return res.redirect("/shoppingcart");
+				// Increment amount
+				item.amount++;
+				item.save();
+
+				return res.redirect("/shoppingcart");
+			} else {
+				//product does not exists in cart, add new item
+				const item = await Item.create({
+					productId: product,
+					amount: 1
+				}).then(data => data);
+
+				const bag = await Bag.findOne({ name: username }).then(data => data);
+
+				bag.itemsId.push(item._id);
+				console.log("Here");
+				await bag.save();
+				return res.redirect("/shoppingcart");
+			}
 		} else {
-			//product does not exists in cart, add new item
+			//no cart for user, create new cart
 			const item = await Item.create({
-				productId: product,
+				productId: product.id,
 				amount: 1
 			}).then(data => data);
+			const newBag = await Bag.create({
+				userId
+			}).then(data => data);
 
-			const bag = await Bag.findOne({ name: username }).then(data => data);
-
-			bag.itemsId.push(item._id);
-			console.log("Here");
-			await bag.save();
+			newBag.itemsId.push(item._id);
+			await newBag.save();
 			return res.redirect("/shoppingcart");
 		}
-	} else {
-		//no cart for user, create new cart
-		const item = await Item.create({
-			productId: product.id,
-			amount: 1
-		}).then(data => data);
-		const newBag = await Bag.create({
-			userId
-		}).then(data => data);
-
-		newBag.itemsId.push(item._id);
-		await newBag.save();
-		return res.redirect("/shoppingcart");
+	} catch (e) {
+		return res.redirect("/login");
 	}
 });
 module.exports = router;

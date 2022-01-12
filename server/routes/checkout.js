@@ -28,8 +28,8 @@ router.post("/", async (req, res) => {
 				};
 			}),
 			submit_type: "pay",
-			success_url: `http://localhost:5000/success.html`,
-			cancel_url: `http://localhost:5000/cancel.html`
+			success_url: `/`,
+			cancel_url: `/`
 		});
 
 		res.json({ url: session.url });
