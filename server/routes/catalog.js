@@ -11,7 +11,9 @@ const categories = [
 
 categories.forEach(category => {
 	router.get(`/${category}`, async (req, res) => {
-		const products = await Product.find().then(data => data);
+		const products = (await Product.find().then(data => data)).filter(
+			data => data.category === category.toLowerCase()
+		);
 		res.render("products", {
 			locals: {
 				productList: products,

@@ -33,6 +33,7 @@ const contactRouter = require("./routes/contact.js");
 const catalogRouter = require("./routes/catalog.js");
 const registerRouter = require("./routes/register.js");
 const loginRouter = require("./routes/login.js");
+const bagRouter = require("./routes/bag.js");
 const port = process.env.PORT || 5000;
 
 // paths
@@ -83,6 +84,7 @@ app.use("/catalog", catalogRouter);
 app.use("/contact", contactRouter);
 app.use("/register", registerRouter);
 app.use("/login", loginRouter);
+app.use("/shoppingcart", bagRouter);
 
 app.get("/", (req, res) => {
 	res.render("index", {

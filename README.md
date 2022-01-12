@@ -1,5 +1,5 @@
 # REVEUX
-A web design assignment of subject CSF3206 in University of Malaysia Terengganu. This project is built with Node Js, Express Js, MongoDB, Tailwind and Stripe.
+A web design assignment of subject CSF3206 in University of Malaysia Terengganu. This project is built with Node Js, Express Js, MongoDB, Tailwind and Stripe in MVC architecture.
 
 
 ## Prerequisites

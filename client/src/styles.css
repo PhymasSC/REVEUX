@@ -1514,10 +1514,6 @@ body {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.grid-rows-3 {
-  grid-template-rows: repeat(3, minmax(0, 1fr));
-}
-
 .flex-col {
   flex-direction: column;
 }
@@ -3165,10 +3161,6 @@ body {
 
   .lg\:w-auto {
     width: auto;
-  }
-
-  .lg\:w-3\/4 {
-    width: 75%;
   }
 
   .lg\:w-3\/6 {

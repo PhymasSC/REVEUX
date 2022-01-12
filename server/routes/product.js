@@ -4,7 +4,6 @@ const Bag = require("./../models/bag");
 const Item = require("./../models/item");
 
 const express = require("express");
-const item = require("./../models/item");
 const router = express.Router();
 
 const NAVBAR_PARTIAL = `${__dirname}/../../client/views/_navbar.html`;
